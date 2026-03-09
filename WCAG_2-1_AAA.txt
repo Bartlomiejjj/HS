@@ -1,0 +1,110 @@
+WCAG 2.1 – Pełna lista wytycznych (A + AA + AAA) z przykładami
+1.1 Text Alternatives
+
+1.1.1 Non-text Content (A) – każdy obraz, ikonka, video musi mieć tekst alternatywny.
+
+<img src="team.jpg" alt="Zespół pracowników przy komputerach">
+
+Dekoracyjne obrazki mogą mieć pusty alt:
+
+<img src="background.jpg" alt="">
+1.2 Time-based Media
+
+1.2.1 Audio-only and Video-only (A) – alternatywa dla audio/video bez wizualnych lub dźwiękowych treści.
+
+1.2.2 Captions (A) – napisy do video.
+
+<video controls>
+  <source src="video.mp4">
+  <track kind="captions" src="napisy.vtt">
+</video>
+
+1.2.5 Audio Description (AA) – opis audio dla materiałów wizualnych.
+
+1.3 Adaptable
+
+1.3.1 Info and Relationships (A) – nagłówki, listy, tabele, formularze z label.
+
+1.3.2 Meaningful Sequence (A) – logiczna kolejność w kodzie.
+
+1.3.3 Sensory Characteristics (A) – instrukcje nie zależne od koloru, kształtu, dźwięku.
+
+1.3.4 Orientation (AA) – strona działa w pionie i poziomie.
+
+1.3.5 Identify Input Purpose (AA) – autocomplete w formularzach.
+
+1.3.6 Identify Purpose (AAA) – semantyka dla interfejsu i regionów.
+
+1.4 Distinguishable
+
+1.4.1 Use of Color (A) – nie używaj tylko koloru jako jedynej informacji.
+
+1.4.3 Contrast (AA) – min. 4.5:1 dla tekstu normalnego, 3:1 dla dużego.
+
+1.4.4 Resize Text (AA) – tekst powiększalny do 200%.
+
+1.4.10 Reflow (AA) – strona działa przy wąskiej szerokości (320px).
+
+2.1 Keyboard Accessible
+
+2.1.1 Keyboard (A) – wszystko dostępne klawiaturą.
+
+2.1.2 No Keyboard Trap (A) – nie blokuj użytkownika w elemencie.
+
+2.2 Enough Time
+
+2.2.1 Timing Adjustable (A) – użytkownik może wydłużyć czas interakcji.
+
+2.2.2 Pause, Stop, Hide (A) – animacje, auto-scroll, tickery można zatrzymać.
+
+2.3 Seizures and Physical Reactions
+
+2.3.1 Three Flashes or Below Threshold (A) – miganie <3 razy/sec.
+
+2.3.2 Three Flashes (AA) – brak migających elementów wywołujących epilepsję.
+
+2.4 Navigable
+
+2.4.1 Bypass Blocks (A) – skip link do głównej treści.
+
+2.4.2 Page Titled (A) – title odzwierciedla zawartość.
+
+2.4.3 Focus Order (A) – logiczna kolejność focusa.
+
+2.4.4 Link Purpose (A) – cel linku jasny.
+
+2.4.6 Headings and Labels (AA) – nagłówki opisują sekcje.
+
+2.4.7 Focus Visible (AA) – focus jest widoczny.
+
+3.1 Readable
+
+3.1.1 Language of Page (A) – lang="pl".
+
+3.1.2 Language of Parts (AA) – jeśli fragment w innym języku, np. <span lang="en">Hello</span>.
+
+3.2 Predictable
+
+3.2.1 On Focus (A) – elementy nie zmieniają kontekstu przy focus.
+
+3.2.2 On Input (A) – zmiany nie występują bez akcji użytkownika.
+
+3.2.3 Consistent Navigation (AA) – menu w tej samej kolejności.
+
+3.2.4 Consistent Identification (AA) – przyciski o tej samej funkcji wyglądają tak samo.
+
+3.3 Input Assistance
+
+3.3.1 Error Identification (A) – opis błędów formularza.
+
+3.3.2 Labels or Instructions (A) – label + instrukcje.
+
+3.3.3 Error Suggestion (AA) – propozycja poprawy.
+
+3.3.4 Error Prevention (Legal, Financial, Data) (AA) – możliwość weryfikacji przed wysłaniem.
+
+4.1 Compatible
+
+4.1.1 Parsing (A) – poprawny HTML/XHTML.
+
+4.1.2 Name, Role, Value (A) – elementy mają role i opis (aria-label, aria-checked…).
