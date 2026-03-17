@@ -1,3 +1,34 @@
+JS 
+script (defer)-> waits for js to load
+
+css
+~ if  
+nav.something ~ somethingElse{}
+        if  (then)
+
+inert > hidden 
+
+semantics <nav> <sections>
+if not
+
+roles(more dangerous)
+
+aria-label(less dangerous)
+
+alt 
+aria-labelledby -> gets description by id for example
+[
+  img aria-labelledby="img-caption-1
+  div
+    <p id="img-caption-1> description /label </p>
+  /div
+]
+
+aria-expanded
+aria-controls -> names by id which element is expanable
+--------------------------------------------------------------------------------------------------
+
+
 WCAG 2.1 – Pełna lista wytycznych (A + AA + AAA) z przykładami
 1.1 Text Alternatives
 

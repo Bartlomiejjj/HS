@@ -1,0 +1,79 @@
+
+/* Panels start off-screen */
+.panel {
+  /* background-color: var(--white); */
+  /* transform: translateX(40%); start below */
+  /* transform: translateY(100%); start below */
+  margin-top: 5vh;
+  transform: translate(0%, 20%);
+  opacity: 0.5;
+  transition: all 1s ease-out; /* smooth slide in */
+}
+
+/* Slide in when "animate" class added */
+.panel.animate {
+  transform: translatey(-10%);
+  opacity: 1;
+}
+
+
+.panel-left {
+  
+  /* background-color: var(--white); */
+  /* transform: translateX(40%); start below */
+  /* transform: translateY(100%); start below */
+  transform: translate(-50%, 0%);
+  opacity: 0.5;
+  transition: all 1s ease-out; /* smooth slide in */
+}
+
+/* Slide in when "animate" class added */
+.panel-left.animate {
+  transform: translateX(-0%);
+  opacity: 1;
+}
+
+/* Panels start off-screen */
+.panel-right {
+  /* background-color: var(--white); */
+  /* transform: translateX(40%); start below */
+  /* transform: translateY(100%); start below */
+  opacity: 0.5;
+  transform: translate(50%, 0%);
+  transition: all 1s ease-out; /* smooth slide in */
+}
+
+/* Slide in when "animate" class added */
+.panel-right.animate {
+  opacity: 1;
+  transform: translateX(-0%);
+}
+
+
+/* Box inside panel */
+.box {
+  opacity: 0;
+  transform: translateY();
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.box.animate {
+  opacity: 1;
+  transform: translateY(200%);
+}
+
+/* animate when class added */
+.box.animate {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) ;
+    transition-behavior: initial;
+  }
+}
+
+/* button */
