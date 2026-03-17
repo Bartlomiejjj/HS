@@ -1,0 +1,422 @@
+/*
+ with WCAG 2.1+ standards
+*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+*{
+    font-family: "Merriweather",serif;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+        overflow-x: hidden;
+
+}
+:root{
+    --white: #FFFFFF;
+    --white-98: hsl(0,0,98,1);
+    --white-95: hsl(0,0,95,1);
+    --white-90: hsla(0, 0%, 90%, 1);
+
+    --black: #000000;
+
+    --primary: #41431b;
+    --secondary: #AEB784;
+    --tetriary: #E3DBBB;
+    --additional: #F8F3E1;
+
+    --nPrimary: #615829;
+    --nSecondary: #4F5E26;
+    --nTetriary: #D2C693;
+}
+.window{
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--black);
+}
+button{
+    min-width: 4rem;
+    min-height: 2rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+/*  button green -> white    */
+button.p-p{
+    position: relative;
+    overflow: hidden;
+    background: var(--nSecondary);
+    color: white;
+}
+
+button.p-p::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: var(--white);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease; /* floaty smooth motion */
+}
+
+button.p-p:hover::before{
+    transform: scaleX(1);
+}
+
+button:active{
+    box-shadow: 0vw 0vw 1vw 0.2vw #000000;
+    scale: 0.9;
+    opacity: 0.5;
+}
+
+button.p-p span{
+    position: relative;
+    z-index: 1;
+    color: white;
+    transition: color 0.8s ease; /* smooth change */
+}
+
+button.p-p:hover span{
+    color: var(--nSecondary);
+    font-weight: 900;
+}
+
+
+/* button base */
+button.p-s{
+    position: relative;
+    overflow: hidden;
+
+    background-color: var(--white);
+    color: var(--nSecondary);
+
+    transition: transform 0.2s ease; /* smooth grow/shrink */
+}
+
+/* fill layer */
+button.p-s::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--nSecondary);
+
+    transform: scaleX(0);
+    transform-origin: bottom;
+    transition: transform 1s ease;
+}
+
+/* fill on hover */
+button.p-s:hover::before{
+    transform: scaleX(1);
+}
+
+/* text */
+button.p-s span{
+    position: relative;
+    z-index: 1;
+    color: var(--nSecondary);
+    transition: color 0.8s ease;
+}
+
+button.p-s:hover span{
+    color: var(--white);
+    font-weight: 900;
+}
+
+.br-sm{
+    border-radius: 6px;
+}
+
+.br-m{
+    border-radius: 8px;
+}
+
+.br-l{
+    border-radius: 10px;
+}
+
+.br-xl{
+    border-radius: 20px;
+}
+
+.txt-sm{
+    font-size: 24px;
+}
+
+.txt-m{
+    font-size: 32px;
+}
+
+.txt-l{
+    font-size: 48px;
+}
+
+/* p{
+    font-size: clamp(6px,1vw,1vw);
+    font-size: clamp(18px,1vw,1rem);
+} */
+
+label{
+    font-size: 24px;
+}
+
+.txt-white{
+    color:var(--white);
+}
+
+.photo-container{
+    position: relative;
+    width: 100%; 
+    max-height: 70rem;
+    /* height: ; */
+    height: 80vw;
+    /* max-height: 90vw; */
+}
+
+.photo-container img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+}
+.photo-container h1{
+    position: absolute;
+    text-align: center;
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*              min deffault max  */
+    font-size: clamp(8vw , 7vw, 7vw);
+}
+.photo-container h2{
+    position: absolute;
+    text-align: center;
+    top: 55%;
+    left: 50%;
+    font-size: clamp(4vw,4vw, 4vw);
+    width: 100%;
+    transform: translate(-50%,-50%);
+}
+.photo-container button{
+    position: absolute;
+    text-align: center;
+    font-size: 3vw;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.photo-container .window h1{
+    top: 38%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+}
+.photo-container .window h2{
+    top: 60%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.image-container-parent{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.image-container{
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem;
+}
+.image-container img{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+
+    object-fit: scale-down;
+}
+.image-container h3{
+    color: var(--nPrimary);
+    position: absolute;
+    
+    width: 100%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+
+    font-size: clamp(24px,2.5rem, 2.5rem);
+}
+.image-container p{
+    color: var(--nPrimary);
+    position: absolute;
+    
+    width: 100%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+}
+nav{
+    background-color: rgba(0, 0, 0, 0);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    height: 5vw;
+    z-index: 3;
+    
+    display: flex;
+    margin-left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bef{
+    padding-top: 1.2vw;
+    color: var(--nSecondary);
+    flex-grow: 0;
+    order: 1;
+    text-align: center;
+    font-size: clamp(12px,1rem, 2.5rem);
+    width: 33%;
+}
+.nav-bef h5{
+    float: left;
+    margin: 0.5rem;
+}
+nav h3{
+    color: var(--nSecondary);
+    flex-grow: 1;
+    order: 2;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-size: clamp(4vw,4vw, 4rem);
+    width: 33%;
+
+}
+.nav-aft{
+    padding-top: 0.2vw;
+    color: var(--nSecondary);
+    flex-grow: 0;
+    order: 3;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-size: clamp(12px,1rem, 2.5rem);
+    width: 33%;
+
+}
+.nav-aft h5{
+    float: left;
+    margin: 1rem;
+}
+
+nav button{
+    margin: 0;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+nav button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem; /* optional for spacing */
+}
+
+/* underline pseudo-element */
+nav button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  height: 0.2rem;
+  width: 100%;          /* same width as button content */
+  background-color: var(--nSecondary);
+  transform: scaleX(0); /* collapse initially */
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+/* on hover → expand */
+nav button:hover::after {
+  transform: scaleX(1);
+}
+.sect button{
+    margin: 0;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;   
+}
+.sect button:hover{
+    box-shadow: 0vw 0vw 1vw 0.1vw #000000;
+    padding-bottom: 1rem;
+}
+
+hr{
+    text-align: center;
+    margin-inline: auto;
+    width: 80%;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+}
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.item{
+    width: 33%;
+}
+
+h1{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+footer{
+    width: 100%;
+    height: 10rem;
+    margin: 0;
+    /* height: auto; */
+}
+.foot{
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
+    background-color: var(--nSecondary);
+}
