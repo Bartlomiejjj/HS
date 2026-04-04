@@ -70,8 +70,8 @@ const NavPanel = ({ blackColor }: color) => {
     to: string
   ) => {
     e.preventDefault(); // prevent page reload
-    setPath("/HS/" + to); // update state for re-render
-    window.history.pushState({}, "", "/HS/" + to); // update URL
+    setPath("/HS/#" + to); // update state for re-render
+    window.history.pushState({}, "", "/HS/#" + to); // update URL
   };
   return (
     <div className="element">

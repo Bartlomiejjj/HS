@@ -91,35 +91,35 @@ function App() {
             <HomePage></HomePage>;
           </>
         );
-      case "/hs/pokoje":
+      case "/hs/#/pokoje":
         return (
           <>
             <NavPanel blackColor={false}></NavPanel>
             <RoomPage></RoomPage>
           </>
         );
-      case "/hs/pokoje/szczegoly":
+      case "/hs/#/pokoje/szczegoly":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <RoomsAll></RoomsAll>
           </>
         );
-      case "/hs/restauracja":
+      case "/hs/#/restauracja":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <RestaurantPage></RestaurantPage>
           </>
         );
-      case "/hs/wesela":
+      case "/hs/#/wesela":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <WeddingPage></WeddingPage>
           </>
         );
-      case "/hs/wydarzenia":
+      case "/hs/#/wydarzenia":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
@@ -127,7 +127,7 @@ function App() {
           </>
         );
       default:
-        window.history.replaceState({}, "", "/hs/hotel"); // no reload
+        window.history.replaceState({}, "", "/HS/#/hotel"); // no reload
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
