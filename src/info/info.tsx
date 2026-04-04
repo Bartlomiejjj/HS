@@ -27,7 +27,6 @@ import mass0 from "../assets/massage-room.webp";
 import gym0 from "../assets/gym-room.webp";
 /*sauna*/
 import sau0 from "../assets/sauna-room.webp";
-import sau1 from "../assets/sauna-room2.jpg";
 /*icons*/
 import massageIcon from "../assets/icons/massageIcon.svg";
 import gymIcon from "../assets/icons/gymIcon.svg";

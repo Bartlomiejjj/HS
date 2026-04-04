@@ -1,12 +1,10 @@
 import Footer from "../components/Footer";
 import MapsInfo from "../components/Maps";
-import NavPanel from "../components/NavPanel";
 import p from "../../public/photo0.jpg";
 
 const Test = () => {
   return (
     <>
-      <NavPanel></NavPanel>
       <header className="photo-container txt-white ">
         <img src={p} alt="Header Photo of Hotel" />
         <div className="window">
