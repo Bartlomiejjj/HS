@@ -1,21 +1,126 @@
 import "../../styles/Hotel.css";
 import "../../styles/animations.css";
-import p from "../assets/duet-room.jpg";
-import ap from "../assets/apartament-room.jpg";
+import "../../styles/universal.css";
+import p from "../assets/single-room.webp";
+import ap from "../assets/duet-room-single.webp";
+import tr from "../assets/triple-room.webp";
+import s from "../assets/studio.webp";
+
+import Carousel from "../components/chooser";
+import { relaxData } from "../info/info";
 const RoomPage = () => {
   return (
     <>
-      <header>
+      <header className="roomPage image">
         <div className="over"></div>
         <h1>Hotel Sylwia</h1>
         <p>Pokoje dla kazdego</p>
       </header>
 
-      {/* <section id="more" aria-label="What is more" className="carousel">
+      <section className="panel-title panel element">
+        {/* <hr /> */}
+        <h1>Pokoje</h1>
+        <hr />
+      </section>
+
+      <section
+        title="pokoj jedno osobowy"
+        className="image-container-parent element panel-left "
+      >
+        <div className="image-container">
+          <img src={p} alt="more" />
+          <aside className="info-box">
+            <h3>Single</h3>
+            <p>
+              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
+              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
+              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
+              laboriosam officia incidunt?{" "}
+            </p>
+            <a href="/pokoje/szczegoly#pokoje">Szczegóły</a>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        title="pokoj dwu osobowy"
+        className="image-container-parent  panel-right "
+      >
+        <div className="image-container-reverseX">
+          <img src={ap} alt="more" />
+          <aside className="info-box">
+            <h3>Double</h3>
+            <p>
+              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
+              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
+              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
+              laboriosam officia incidunt?{" "}
+            </p>
+            <a href="/pokoje/szczegoly#apartamenty">Szczegóły</a>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        title="pokoj trzy osobowy"
+        className="image-container-parent element panel-left "
+      >
+        <div className="image-container">
+          <img src={tr} alt="more" />
+          <aside className="info-box">
+            <h3>Triple</h3>
+            <p>
+              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
+              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
+              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
+              laboriosam officia incidunt?{" "}
+            </p>
+            <a href="/pokoje/szczegoly#pokoje">Szczegóły</a>
+          </aside>
+        </div>
+      </section>
+
+      <section className="panel-title element panel">
+        {/* <hr /> */}
+        <h1>Apartamenty</h1>
+        <hr />
+      </section>
+
+      <section
+        title="Apartament Studio"
+        className="image-container-parent  panel-right "
+      >
+        <div className="image-container-reverseX">
+          <img src={s} alt="more" />
+          <aside className="info-box">
+            <h3>Studio</h3>
+            <p>
+              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
+              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
+              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
+              laboriosam officia incidunt?{" "}
+            </p>
+            <a href="/pokoje/szczegoly#apartamenty">Szczegóły</a>
+          </aside>
+        </div>
+      </section>
+      <section className="panel-title element panel">
+        {/* <hr /> */}
+        <h1>Relaks & wiecej</h1>
+        <hr />
+      </section>
+      <Carousel link={relaxData.link} props={relaxData.props}></Carousel>
+      {/* 
+      <section id="more" aria-label="What is more" className="carousel">
         <div className="group">
           <button className="card" aria-label="Wesele" aria-labelledby="more">
             <a href="">Wesele</a>
           </button>
+  
           <button
             className="card"
             aria-label="Restauracja"
@@ -63,60 +168,6 @@ const RoomPage = () => {
           </button>
         </div>
       </section> */}
-      {/* <main title="Hotel" className="">
-        <article>
-          <h2>Hotel Sylwia Gliwice</h2>
-          <p>Tekst opisujacy jakos hotel</p>
-        </article>
-        <hr />
-        <p>cos o okolicy lub mozliwosci</p>
-      </main> */}
-
-      <section className="panel-title panel element">
-        {/* <hr /> */}
-        <h1>Pokoje</h1>
-        <hr />
-      </section>
-
-      <section
-        title="Wesela"
-        className="image-container-parent element panel-left "
-      >
-        <div className="image-container">
-          <img src={p} alt="more" />
-          <aside className="info-box">
-            <h3>Single</h3>
-            <p>
-              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
-              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
-              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
-              laboriosam officia incidunt?{" "}
-            </p>
-          </aside>
-        </div>
-      </section>
-      <section className="panel-title element panel">
-        {/* <hr /> */}
-        <h1>Apartamenty</h1>
-        <hr />
-      </section>
-      <section title="Wesela" className="image-container-parent  panel-right ">
-        <div className="image-container-reverseX">
-          <img src={ap} alt="more" />
-          <aside className="info-box">
-            <h3>Double</h3>
-            <p>
-              Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
-              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
-              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
-              laboriosam officia incidunt?{" "}
-            </p>
-            <a href="#/szczegoly">Szczegóły</a>
-          </aside>
-        </div>
-      </section>
       {/* <section className="image-container-parent sect panel-left ">
         <div className="image-container">
           <img src={p} alt="more" />
@@ -124,7 +175,7 @@ const RoomPage = () => {
           <p>dodatkowe info</p>
         </div>
       </section> */}
-      <div style={{ height: "20vw" }}></div>
+      {/* <div style={{ height: "20vw" }}></div> */}
     </>
   );
 };

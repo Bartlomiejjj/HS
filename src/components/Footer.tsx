@@ -1,5 +1,5 @@
 import "../../styles/universal.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logos/nLogo.png";
 type eleWIB = {
   text: string;
   ariaLabel: string;
@@ -30,17 +30,10 @@ export const ElementWithIconBefore = ({
 const Footer = () => {
   return (
     <footer id="footer" className="">
-      <hr />
+      {/* <hr /> */}
       <section className="" aria-labelledby="footer">
         <section aria-label="Logo Hotelu Sylwia">
-          <img
-            src={logo}
-            alt="Logo Hotelu Sylwia"
-            // width={"12%"}
-            // height={"10vw"}
-            // height={"10%"}
-            // height={"100vh"}
-          />
+          <img src={logo} alt="Logo Hotelu Sylwia" />
         </section>
         <section aria-labelledby="footer">
           <b>Lokalizacja</b>

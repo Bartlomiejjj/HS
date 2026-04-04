@@ -30,7 +30,7 @@ body{
     --additional: #F8F3E1;
 
     --nPrimary: #615829;
-    --nSecondary: #4F5E26;
+    --nSecondary: #4f5e26;
     --nTetriary: #D2C693;
 }
 .window{
@@ -386,13 +386,13 @@ nav button:hover::after {
     padding-bottom: 1rem;
 }
 
-hr{
+/* hr{
     text-align: center;
     margin-inline: auto;
     width: 80%;
     margin-top: 4vw;
     margin-bottom: 4vw;
-}
+} */
 
 .container{
     display: flex;
