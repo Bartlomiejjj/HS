@@ -1,79 +1,83 @@
-
-/* Panels start off-screen */
-.panel {
-  /* background-color: var(--white); */
-  /* transform: translateX(40%); start below */
-  /* transform: translateY(100%); start below */
-  margin-top: 5vh;
-  transform: translate(0%, 20%);
-  opacity: 0.5;
-  transition: all 1s ease-out; /* smooth slide in */
+html, body {
+  overflow-x: hidden;
 }
 
-/* Slide in when "animate" class added */
-.panel.animate {
-  transform: translatey(-10%);
-  opacity: 1;
+body {
+  position: relative;
 }
 
-
-.panel-left {
-  
-  /* background-color: var(--white); */
-  /* transform: translateX(40%); start below */
-  /* transform: translateY(100%); start below */
-  transform: translate(-50%, 0%);
-  opacity: 0.5;
-  transition: all 1s ease-out; /* smooth slide in */
-}
-
-/* Slide in when "animate" class added */
-.panel-left.animate {
-  transform: translateX(-0%);
-  opacity: 1;
-}
-
-/* Panels start off-screen */
+/* Shared panel styles */
+.panel,
+.panel-left,
 .panel-right {
-  /* background-color: var(--white); */
-  /* transform: translateX(40%); start below */
-  /* transform: translateY(100%); start below */
-  opacity: 0.5;
-  transform: translate(50%, 0%);
-  transition: all 1s ease-out; /* smooth slide in */
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  will-change: transform, opacity;
 }
 
-/* Slide in when "animate" class added */
+/* Individual starting positions */
+.panel-left {
+  transform: translateX(-50%);
+}
+
+.panel-right {
+  transform: translateX(50%);
+}
+
+/* Animate state */
+.panel.animate,
+.panel-left.animate,
 .panel-right.animate {
   opacity: 1;
-  transform: translateX(-0%);
+  transform: translate(0, 0);
 }
-
 
 /* Box inside panel */
 .box {
   opacity: 0;
-  transform: translateY();
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(20px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  will-change: transform, opacity;
 }
 
 .box.animate {
   opacity: 1;
-  transform: translateY(200%);
+  transform: translateY(0);
 }
 
-/* animate when class added */
-.box.animate {
-  opacity: 1;
-  transform: translateY(0) translateX(0);
+/* Hide scrollbars */
+.panel::-webkit-scrollbar,
+.panel-left::-webkit-scrollbar,
+.panel-right::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1) ;
-    transition-behavior: initial;
+/* Mobile */
+@media screen and (max-width: 800px) {
+  /* 🔴 Disable heavy animations */
+  .panel,
+  .panel-left,
+  .panel-right,
+  .box {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
   }
-}
 
-/* button */
+  /* 🔴 Remove complex transforms */
+  .panel,
+  .panel-left,
+  .panel-right {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Optional: keep VERY light animation (safe) */
+  .box {
+    opacity: 1;
+    transform: none;
+  }
+
+}

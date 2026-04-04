@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../../styles/Hotel.css";
 import "../../styles/animations.css";
 import navbarIcon2 from "../../src/assets/icons/navbarIcon_2.svg";
+import navbarIcon2_black from "../../src/assets/icons/navbarIcon_2_black.png";
 import navbarCloseIcon from "../../src/assets/icons/navbarCloseIcon.svg";
+type color = {
+  blackColor: boolean;
+};
 
-const NavPanel = () => {
+const NavPanel = ({ blackColor }: color) => {
   const navLinks = document.querySelectorAll("nav a");
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -77,11 +81,15 @@ const NavPanel = () => {
         aria-controls="navbar"
         id="open-sidebar-button"
         className=""
+        style={{ color: "black" }}
         onClick={() => {
           openNavbar();
         }}
       >
-        <img src={navbarIcon2} alt="otworz-pasek-nawigacyjny" />
+        <img
+          src={blackColor ? navbarIcon2_black : navbarIcon2}
+          alt="otworz-pasek-nawigacyjny"
+        />
       </button>
       <nav id="navbar">
         <button
@@ -107,7 +115,7 @@ const NavPanel = () => {
           <li className="">
             <a
               href="/pokoje"
-              className={path === "/pokoje" ? "active-link" : ""}
+              className={path && path.includes("/pokoje") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/pokoje")}
               aria-current="page"
             >
@@ -117,7 +125,9 @@ const NavPanel = () => {
           <li>
             <a
               href="/restauracja"
-              className={path === "/restauracja" ? "active-link" : ""}
+              className={
+                path && path.includes("/restauracja") ? "active-link" : ""
+              }
               onClick={(e) => handleNavClick(e, "/restauracja")}
             >
               Restauracja
@@ -126,7 +136,7 @@ const NavPanel = () => {
           <li>
             <a
               href="/wesela"
-              className={path === "wesela" ? "active-link" : ""}
+              className={path && path.includes("wesela") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/wesela")}
             >
               Wesela
@@ -134,9 +144,11 @@ const NavPanel = () => {
           </li>
           <li>
             <a
-              href="/eventy"
-              className={path === "/eventy" ? "active-link" : ""}
-              onClick={(e) => handleNavClick(e, "/eventy")}
+              href="/wydarzenia"
+              className={
+                path && path.includes("/wydarzenia") ? "active-link" : ""
+              }
+              onClick={(e) => handleNavClick(e, "/wydarzenia")}
             >
               Eventy
             </a>

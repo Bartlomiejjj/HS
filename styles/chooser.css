@@ -1,0 +1,131 @@
+@import "./universal.css";
+
+/* container */
+.group-small {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* each panel */
+.image-container-chooser {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* ACTIVE = 60% */
+.image-container-chooser.active {
+  flex: 6;
+}
+
+/* OTHERS */
+.image-container-chooser:not(.active) {
+  flex: 2;
+}
+
+/* image */
+.image-container-chooser img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* slight zoom on active */
+.image-container-chooser.active img {
+  transform: scale(1.05);
+}
+
+/* 🔵 ABSTRACT SPACE (for ALL panels) */
+.image-container-chooser::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+
+  opacity: 0.6;
+  transition: 0.4s ease;
+}
+
+/* stronger on active */
+.image-container-chooser.active::after {
+  height: 60%;
+  opacity: 0.9;
+}
+
+/* ASIDE */
+.info-box-chooser {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  z-index: 2;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+.info-box-chooser h3,.info-box-chooser  p,.info-box-chooser  a{
+    color: var(--white)
+}
+
+/* SHOW ONLY ON ACTIVE */
+.image-container-chooser.active .info-box-chooser {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* text styling */
+.info-box-chooser h3 {
+  margin: 0 0 10px;
+}
+
+.info-box-chooser p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+@media (max-width: 850px) {
+  .group-small {
+    flex-direction: column;
+    height: auto; /* allow natural height */
+  }
+
+  .image-container-chooser {
+    flex: none; /* disable flex growth */
+    width: 100%;
+    height: 250px; /* adjust as you like */
+  }
+
+  /* disable accordion sizing */
+  .image-container-chooser.active,
+  .image-container-chooser:not(.active) {
+    flex: none;
+  }
+
+  /* OPTIONAL: show all text (better UX on mobile) */
+  .info-box-chooser {
+    /* opacity: 1;
+    transform: translateY(0); */
+  }
+
+  /* OPTIONAL: reduce overlay strength */
+  .image-container-chooser::after {
+    height: 50%;
+    opacity: 0.7;
+  }
+}
