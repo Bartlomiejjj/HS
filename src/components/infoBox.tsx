@@ -13,7 +13,6 @@ type ImageSectionProps = {
 };
 
 export const ImageSectionReverseX: React.FC<ImageSectionProps> = ({
-  title,
   imageSrc,
   imageAlt,
   heading,
@@ -53,7 +52,6 @@ export const ImageSectionReverseX: React.FC<ImageSectionProps> = ({
   );
 };
 export const ImageSectionX: React.FC<ImageSectionProps> = ({
-  title,
   imageSrc,
   imageAlt,
   heading,

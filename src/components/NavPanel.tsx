@@ -18,7 +18,7 @@ const NavPanel = ({ blackColor }: color) => {
 
   const media = window.matchMedia("(max-width: 800px)");
 
-  function updateNavbar(e: any) {
+  function updateNavbar(media: any) {
     var navbar = document.getElementById("navbar");
     const isMobile = media.matches;
     if (isMobile) {
@@ -69,7 +69,7 @@ const NavPanel = ({ blackColor }: color) => {
     e: React.MouseEvent<HTMLAnchorElement>,
     to: string
   ) => {
-    // e.preventDefault(); // prevent page reload
+    e.preventDefault(); // prevent page reload
     setPath(to); // update state for re-render
     window.history.pushState({}, "", to); // update URL
   };

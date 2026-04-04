@@ -4,7 +4,6 @@ import RoomPage from "./Pages/Room";
 import HomePage from "./Pages/Home";
 import NavPanel from "./components/NavPanel";
 import Footer from "./components/Footer";
-import MapsInfo from "./components/Maps";
 import RoomsAll from "./Pages/RoomsAll";
 import { RestaurantPage } from "./Pages/Restaurant";
 import { WeddingPage } from "./Pages/Wedding";

@@ -3,14 +3,9 @@ import BreakTitle from "../components/break_title";
 import Carousel from "../components/chooser";
 import { GalleryWithMoreImages } from "../components/gallery";
 import HeaderText from "../components/headerText";
-import RoomSection from "../components/imageUnEvenContainer";
-import ImageUnevenContainer from "../components/imageUnEvenContainer";
 import { RestaurantMenu } from "../components/Menu";
-import MultiPhotoSection from "../components/multi";
 import {
   galleryWithImagesData_restaurantRooms,
-  restaurantImagesData,
-  restaurantMenu,
   restaurantRoomCarouselArray,
 } from "../info/info";
 
