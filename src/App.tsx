@@ -84,42 +84,42 @@ function App() {
   console.log(window.location.pathname);
   function reLinker(pathname: string) {
     switch (pathname.toLowerCase()) {
-      case "/hotel":
+      case "/hs/hotel":
         return (
           <>
             {/* <NavPanel blackColor={true}></NavPanel> */}
             <HomePage></HomePage>;
           </>
         );
-      case "/pokoje":
+      case "/hs/pokoje":
         return (
           <>
             <NavPanel blackColor={false}></NavPanel>
             <RoomPage></RoomPage>
           </>
         );
-      case "/pokoje/szczegoly":
+      case "/hs/pokoje/szczegoly":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <RoomsAll></RoomsAll>
           </>
         );
-      case "/restauracja":
+      case "/hs/restauracja":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <RestaurantPage></RestaurantPage>
           </>
         );
-      case "/wesela":
+      case "/hs/wesela":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
             <WeddingPage></WeddingPage>
           </>
         );
-      case "/wydarzenia":
+      case "/hs/wydarzenia":
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
@@ -127,7 +127,7 @@ function App() {
           </>
         );
       default:
-        window.history.replaceState({}, "", "/hotel"); // no reload
+        window.history.replaceState({}, "", "/hs/hotel"); // no reload
         return (
           <>
             <NavPanel blackColor={true}></NavPanel>
