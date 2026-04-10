@@ -128,7 +128,7 @@ export type carouselPropsArray = {
 };
 
 export const relaxData: carouselPropsArray = {
-  link: "pokoje/szczegoly#relaks",
+  link: "/szczegoly#relaks",
   props: [
     {
       id: 1,

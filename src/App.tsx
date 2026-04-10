@@ -15,9 +15,29 @@ function App() {
   // ✅ Listen to hash changes (back/forward + clicks)
   useEffect(() => {
     const handleHashChange = () => {
-      setHash(window.location.hash || "#/hotel");
-      window.scrollTo(0, 0); // scroll to top on route change
-      // window.location.reload();
+      const fullHash = window.location.hash || "#/hotel";
+
+      // remove first "#"
+      const cleaned = fullHash.startsWith("#") ? fullHash.slice(1) : fullHash;
+
+      // split route vs anchor
+      const [routePart, anchor] = cleaned.split("#");
+
+      const route = routePart || "/hotel";
+
+      setHash(`#${route}`);
+
+      window.scrollTo(0, 0);
+
+      // scroll AFTER render
+      if (anchor) {
+        setTimeout(() => {
+          document.getElementById(anchor)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 50);
+      }
     };
     console.log(window.location.hash);
     window.addEventListener("hashchange", handleHashChange);

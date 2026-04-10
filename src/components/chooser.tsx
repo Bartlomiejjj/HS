@@ -13,6 +13,25 @@ export default function Carousel({ props, link }: carouselPropsArray) {
 
     return () => clearInterval(interval);
   }, []);
+
+  const [path, setPath] = useState(window.location.hash);
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    to: string
+  ) => {
+    e.preventDefault(); // prevent page reload
+    setPath("/HS/#" + to); // update state for re-render
+    window.history.pushState({}, "", "/HS/#" + to); // update URL
+    window.location.reload();
+  };
+  const scrollToId = (id: string) => {
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
   return (
     <section className=" panel carousel-small">
       <div className="group-small">
@@ -31,7 +50,13 @@ export default function Carousel({ props, link }: carouselPropsArray) {
               <p style={{ fontSize: "1.2em" }}>{item.description}</p>
               <a
                 style={{ fontSize: "1.2em" }}
-                href={item.link ? item.link : link}
+                href={item.link ? "#" + item.link : "#" + link}
+                onClick={(e) =>
+                  handleNavClick(
+                    e,
+                    item.link ? "/" + item.link : link ? "/" + link : "/"
+                  )
+                }
               >
                 Szczegóły
               </a>

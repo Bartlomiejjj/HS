@@ -38,7 +38,7 @@ const RoomPage = () => {
               corporis, repudiandae corrupti! Rem quaerat nobis temporibus
               laboriosam officia incidunt?{" "}
             </p>
-            <a href="/pokoje/szczegoly#pokoje">Szczegóły</a>
+            <a href="/HS/#/szczegoly">Szczegóły</a>
           </aside>
         </div>
       </section>

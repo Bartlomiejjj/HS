@@ -74,6 +74,14 @@ const NavPanel = ({ blackColor }: color) => {
     window.history.pushState({}, "", "/HS/#" + to); // update URL
     window.location.reload();
   };
+  const scrollToId = (id: string) => {
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
   return (
     <div className="element">
       <button
@@ -156,7 +164,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              href="##footer"
+              onClick={() => scrollToId("footer")}
               className="accent-link"
               // className={path === "/Home" ? "active-link" : ""}
               // onClick={(e) => handleNavClick(e, "/Home")}
