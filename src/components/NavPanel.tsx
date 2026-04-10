@@ -57,7 +57,7 @@ const NavPanel = ({ blackColor }: color) => {
       media.removeEventListener("change", updateNavbar);
     };
   }, []);
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(window.location.hash);
 
   // update path when back/forward buttons are pressed
   useEffect(() => {
@@ -72,6 +72,7 @@ const NavPanel = ({ blackColor }: color) => {
     e.preventDefault(); // prevent page reload
     setPath("/HS/#" + to); // update state for re-render
     window.history.pushState({}, "", "/HS/#" + to); // update URL
+    window.location.reload();
   };
   return (
     <div className="element">
@@ -104,7 +105,7 @@ const NavPanel = ({ blackColor }: color) => {
         <ul>
           <li className="home-li">
             <a
-              href="/hotel"
+              href="#/hotel"
               className={path === "/hotel" ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/hotel")}
               aria-current="page"
@@ -114,7 +115,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li className="">
             <a
-              href="/pokoje"
+              href="#/pokoje"
               className={path && path.includes("/pokoje") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/pokoje")}
               aria-current="page"
@@ -124,7 +125,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              href="/restauracja"
+              href="#/restauracja"
               className={
                 path && path.includes("/restauracja") ? "active-link" : ""
               }
@@ -135,7 +136,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              href="/wesela"
+              href="#/wesela"
               className={path && path.includes("wesela") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/wesela")}
             >
@@ -144,7 +145,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              href="/wydarzenia"
+              href="#/wydarzenia"
               className={
                 path && path.includes("/wydarzenia") ? "active-link" : ""
               }
@@ -155,7 +156,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              href="#footer"
+              href="##footer"
               className="accent-link"
               // className={path === "/Home" ? "active-link" : ""}
               // onClick={(e) => handleNavClick(e, "/Home")}
