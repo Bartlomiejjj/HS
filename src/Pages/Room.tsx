@@ -38,7 +38,7 @@ const RoomPage = () => {
               corporis, repudiandae corrupti! Rem quaerat nobis temporibus
               laboriosam officia incidunt?{" "}
             </p>
-            <a href="/HS/#/szczegoly">Szczegóły</a>
+            <a href="#/pokoje/szczegoly#pokoje">Szczegóły</a>
           </aside>
         </div>
       </section>
@@ -58,7 +58,7 @@ const RoomPage = () => {
               corporis, repudiandae corrupti! Rem quaerat nobis temporibus
               laboriosam officia incidunt?{" "}
             </p>
-            <a href="/pokoje/szczegoly#apartamenty">Szczegóły</a>
+            <a href="#/pokoje/szczegoly#pokoje">Szczegóły</a>
           </aside>
         </div>
       </section>
@@ -78,7 +78,7 @@ const RoomPage = () => {
               corporis, repudiandae corrupti! Rem quaerat nobis temporibus
               laboriosam officia incidunt?{" "}
             </p>
-            <a href="/pokoje/szczegoly#pokoje">Szczegóły</a>
+            <a href="#/pokoje/szczegoly#pokoje">Szczegóły</a>
           </aside>
         </div>
       </section>

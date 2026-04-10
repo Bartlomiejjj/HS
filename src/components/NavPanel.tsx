@@ -164,7 +164,7 @@ const NavPanel = ({ blackColor }: color) => {
           </li>
           <li>
             <a
-              onClick={() => scrollToId("footer")}
+              onClick={() => scrollToId("kontakt")}
               className="accent-link"
               // className={path === "/Home" ? "active-link" : ""}
               // onClick={(e) => handleNavClick(e, "/Home")}

@@ -102,8 +102,23 @@ function App() {
             <RoomsAll />
           </>
         );
+      case "#/pokoje/szczegoly#relaks":
+        return (
+          <>
+            <NavPanel blackColor={true} />
+            <RoomsAll />
+          </>
+        );
 
       case "#/restauracja":
+        return (
+          <>
+            <NavPanel blackColor={true} />
+            <RestaurantPage />
+          </>
+        );
+
+      case "#/restauracja#sale":
         return (
           <>
             <NavPanel blackColor={true} />

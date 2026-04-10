@@ -29,7 +29,7 @@ export const ElementWithIconBefore = ({
 };
 const Footer = () => {
   return (
-    <footer id="footer" className="">
+    <footer id="kontakt" className="">
       {/* <hr /> */}
       <section className="" aria-labelledby="footer">
         <section aria-label="Logo Hotelu Sylwia">

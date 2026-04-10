@@ -128,25 +128,28 @@ export type carouselPropsArray = {
 };
 
 export const relaxData: carouselPropsArray = {
-  link: "/szczegoly#relaks",
+  // link: "szczegoly#relaks",
   props: [
     {
       id: 1,
       img: sau0,
       title: "Sauna",
       description: "Idealny po ciężkim dniu i nie tylko...",
+      link: "pokoje/szczegoly#relaks",
     },
     {
       id: 2,
       img: mass0,
       title: "Masaż",
       description: "Idealne miejsce na odpoczynek i regenerację...",
+      link: "pokoje/szczegoly#relaks",
     },
     {
       id: 3,
       img: gym0,
       title: "Siłownia",
       description: "Pełen pakiet wellness dla wymagających...",
+      link: "pokoje/szczegoly#relaks",
     },
   ],
 };
@@ -211,7 +214,7 @@ export const restaurantRoomCarouselArray: carouselPropsArray = {
       title: "Bankietowa",
       description: "Idealny po ciężkim dniu i nie tylko...",
       // link: "#bankietowa",
-      link: "#sale",
+      link: "restauracja#sale",
     },
     {
       id: 2,
@@ -219,7 +222,7 @@ export const restaurantRoomCarouselArray: carouselPropsArray = {
       title: "Restauracyjna",
       description: "Idealne miejsce na odpoczynek i regenerację...",
       // link: "#restauracyjna",
-      link: "#sale",
+      link: "restauracja#sale",
     },
     {
       id: 3,
@@ -227,7 +230,7 @@ export const restaurantRoomCarouselArray: carouselPropsArray = {
       title: "Śniadaniowa",
       description: "Pełen pakiet wellness dla wymagających...",
       // link: "#sniadaniowa",
-      link: "#sale",
+      link: "restauracja#sale",
     },
     {
       id: 4,
@@ -235,7 +238,7 @@ export const restaurantRoomCarouselArray: carouselPropsArray = {
       title: "Mała",
       description: "Pełen pakiet wellness dla wymagających...",
       // link: "#mala",
-      link: "#sale",
+      link: "restauracja#sale",
     },
   ],
 };
