@@ -1,0 +1,21 @@
+aside.event-asidebar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+aside.event-asidebar button, input{
+    scale: 1;
+    opacity: 1;
+    width: 7rem;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+main.events{
+
+}
+section.event{
+
+}
