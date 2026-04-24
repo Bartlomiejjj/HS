@@ -1,0 +1,95 @@
+button{
+    min-width: 4rem;
+    min-height: 2rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+/* button:focus{
+    background-color: var(--primary-50o);
+} */
+/*  button green -> white    */
+button.p-p{
+    position: relative;
+    overflow: hidden;
+    background: var(--nSecondary);
+    color: white;
+}
+
+button.p-p::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: var(--white);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease; /* floaty smooth motion */
+}
+
+button.p-p:hover::before{
+    transform: scaleX(1);
+}
+
+button:active{
+    box-shadow: 0vw 0vw 1vw 0.2vw #000000;
+    scale: 0.9;
+    opacity: 0.5;
+}
+
+button.p-p span{
+    position: relative;
+    z-index: 1;
+    color: white;
+    transition: color 0.8s ease; /* smooth change */
+}
+
+button.p-p:hover span{
+    color: var(--nSecondary);
+    font-weight: 900;
+}
+
+
+/* button base */
+button.p-s{
+    position: relative;
+    overflow: hidden;
+
+    background-color: var(--white);
+    color: var(--nSecondary);
+
+    transition: transform 0.2s ease; /* smooth grow/shrink */
+}
+
+/* fill layer */
+button.p-s::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--nSecondary);
+
+    transform: scaleX(0);
+    transform-origin: bottom;
+    transition: transform 1s ease;
+}
+
+/* fill on hover */
+button.p-s:hover::before{
+    transform: scaleX(1);
+}
+
+/* text */
+button.p-s span{
+    position: relative;
+    z-index: 1;
+    color: var(--nSecondary);
+    transition: color 0.8s ease;
+}
+
+button.p-s:hover span{
+    color: var(--white);
+    font-weight: 900;
+}

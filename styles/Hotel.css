@@ -133,18 +133,18 @@ header.image .over{
 }
 
 /* main */
-main{
+main.hotel{
     position: relative;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-main h2{
+main.hotel h2{
     font-size: 3vw;
     color: var(--secondary-90l);
 }
 
-main p{
+main.hotel p{
     color: var(--secondary);
 }
 

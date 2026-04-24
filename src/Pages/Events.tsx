@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../../styles/events.css";
+import "../../styles/buttons.css";
+import { Button } from "../components/button";
+import sa from "../assets/sauna-room.jpg";
 
 export type event_props = {
   date: string;
@@ -41,36 +44,42 @@ export const events_list: events = {
     },
     {
       date: "2026-04-14",
-      description: "description was longer",
+      description:
+        "description was longer aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       name: "NAME5",
-      img: "img source link",
+      img: sa,
       tags: ["tech", "conference"],
     },
   ],
 };
 
-export const Event = ({ date, description, name, tags }: event_props) => {
-  const [showTags, setShowTags] = useState(false);
+export const Event = ({ date, description, name, tags, img }: event_props) => {
+  // const [showTags, setShowTags] = useState(true);
 
   return (
-    <section className="event" onClick={() => setShowTags(!showTags)}>
-      <h1>{name}</h1>
-      <h2>{date}</h2>
-      <p>{description}</p>
+    <section
+      className={`event ${img ? "event--with-img" : ""}`}
+      title={`Wydarzenie ${name}, ${date}`}
+      style={img ? { backgroundImage: `url(${img})` } : {}}
+    >
+      <div className="event__content">
+        <h1>{name}</h1>
+        <h2>{date}</h2>
+        <p>{description}</p>
 
-      {showTags && tags && (
-        <div className="tags">
-          {tags.map((tag, index) => (
-            <span key={index} className="tag">
-              #{tag}
-            </span>
-          ))}
-        </div>
-      )}
+        {tags && (
+          <div className="tags">
+            {tags.map((tag, index) => (
+              <span key={index} className="tag" title={tag}>
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   );
 };
-
 export const EventHandler = ({
   e,
   selected_date,
@@ -126,8 +135,13 @@ export const EventPage = () => {
 
   return (
     <>
-      <aside className="event-asidebar">
-        <button onClick={prevMonth}>{"<"}</button>
+      <aside className="event-asidebar" id="events" aria-label="">
+        <Button
+          _label="poprzedni miesiąc"
+          _parent_id="events"
+          _text="<"
+          _void={prevMonth}
+        ></Button>
 
         <input
           type="date"
@@ -136,10 +150,15 @@ export const EventPage = () => {
           onChange={(e) => setSelectedDate(e.currentTarget.value)}
         />
 
-        <button onClick={nextMonth}>{">"}</button>
+        <Button
+          _parent_id="events"
+          _label="przyszły miesiąc"
+          _text=">"
+          _void={nextMonth}
+        ></Button>
       </aside>
 
-      <div className="filter-buttons">
+      <div className="filter-buttons ">
         <button
           className={filterMode === "day" ? "active" : ""}
           onClick={() => setFilterMode("day")}
@@ -161,16 +180,16 @@ export const EventPage = () => {
           Wszystkie w tym roku
         </button>
       </div>
-      <section>
+      <aside>
         <b>#</b>
         {filterMode == "day"
           ? "Wszystkie wydarzenia w tym dniu"
           : filterMode == "month"
           ? "Wszystkie wydarzenia w tym miesiącu"
           : filterMode == "year"
-          ? "Wszystkie wydarzenia w tym miesiącu"
+          ? "Wszystkie wydarzenia w tym roku"
           : ""}
-      </section>
+      </aside>
       <EventHandler
         e={events_list.e}
         selected_date={selectedDate}

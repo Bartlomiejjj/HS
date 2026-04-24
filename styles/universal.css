@@ -8,6 +8,7 @@
     --tetriary: #8C9B9C ;
     --tetriary-75o: hsla(184, 7%, 58%, 0.75) ; /*75% of opacity*/
     --black: #000000;
+    --black-25o: hsla(0, 0%, 0%, 0.25);
     --black-50o: hsla(0, 0%, 0%, 0.5);
 }
 *{

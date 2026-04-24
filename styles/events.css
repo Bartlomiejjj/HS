@@ -12,10 +12,38 @@ aside.event-asidebar button, input{
     font-weight: bolder;
     font-size: 1em;
 }
-
-main.events{
-
+.filter-buttons{
+    margin: 0.2vh;
+    text-align: center;
 }
-section.event{
+.filter-buttons button:hover{
+    background-color: var(--black-25o);
+}
+.filter-buttons button.active{
+    background-color: var(--black-50o);
+}
+main.events{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10vh; */
+    /* width: 50%; */
+    height: fit-content;
+}
+section.event {
+    margin: 0.5rem;
+    background-color: var(--black-25o);
+    padding: 2rem;
+    height: fit-content;
+    word-break: break-word;
 
+    /* overflow-wrap: break-word; */
+}
+
+section.event img{
+    /* background-image: 2; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
