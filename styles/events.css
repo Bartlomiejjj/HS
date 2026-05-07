@@ -20,7 +20,7 @@ aside.event-asidebar button, input{
     background-color: var(--black-25o);
 }
 .filter-buttons button.active{
-    background-color: var(--black-50o);
+    background-color: var(--black-25o);
 }
 main.events{
     display: flex;

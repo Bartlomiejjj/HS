@@ -8,6 +8,7 @@ import s from "../assets/studio.webp";
 
 import Carousel from "../components/chooser";
 import { relaxData } from "../info/info";
+import { ImageSectionX } from "../components/infoBox";
 const RoomPage = () => {
   return (
     <>
@@ -22,8 +23,21 @@ const RoomPage = () => {
         <h1>Pokoje</h1>
         <hr />
       </section>
-
-      <section
+      <ImageSectionX
+        description="Pokoj idealny dla podróżojacych w pojedynke lub biznesowo Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis
+              quibusdam maiores? Magni in qui ex numquam modi vel eligendi
+              corporis, repudiandae corrupti! Rem quaerat nobis temporibus
+              laboriosam officia incidunt?"
+        heading="Single"
+        imageAlt="pokoj pojedynczy"
+        imageSrc={p}
+        linkText="Szczegóły"
+        linkHref="#/pokoje/szczegoly#pokoje"
+        title="Single room"
+        withButton
+      ></ImageSectionX>
+      {/* <section
         title="pokoj jedno osobowy"
         className="image-container-parent element panel-left "
       >
@@ -41,7 +55,7 @@ const RoomPage = () => {
             <a href="#/pokoje/szczegoly#pokoje">Szczegóły</a>
           </aside>
         </div>
-      </section>
+      </section> */}
 
       <section
         title="pokoj dwu osobowy"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Hotel.css";
 import "../../styles/animations.css";
+import "../../styles/navigationPanel.css";
 import navbarIcon2 from "../../src/assets/icons/navbarIcon_2.svg";
 import navbarIcon2_black from "../../src/assets/icons/navbarIcon_2_black.png";
 import navbarCloseIcon from "../../src/assets/icons/navbarCloseIcon.svg";
@@ -118,7 +119,7 @@ const NavPanel = ({ blackColor }: color) => {
               onClick={(e) => handleNavClick(e, "/hotel")}
               aria-current="page"
             >
-              H O T E L
+              HOTEL
             </a>
           </li>
           <li className="">
@@ -128,7 +129,7 @@ const NavPanel = ({ blackColor }: color) => {
               onClick={(e) => handleNavClick(e, "/pokoje")}
               aria-current="page"
             >
-              Pokoje
+              Pokoje & Relaks
             </a>
           </li>
           <li>
@@ -139,7 +140,7 @@ const NavPanel = ({ blackColor }: color) => {
               }
               onClick={(e) => handleNavClick(e, "/restauracja")}
             >
-              Restauracja
+              Restauracja & Sale
             </a>
           </li>
           <li>
@@ -148,7 +149,7 @@ const NavPanel = ({ blackColor }: color) => {
               className={path && path.includes("wesela") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/wesela")}
             >
-              Wesela
+              Wesela & Plener
             </a>
           </li>
           <li>
@@ -159,7 +160,7 @@ const NavPanel = ({ blackColor }: color) => {
               }
               onClick={(e) => handleNavClick(e, "/wydarzenia")}
             >
-              Eventy
+              Wydarzenia & Kampery
             </a>
           </li>
           <li>

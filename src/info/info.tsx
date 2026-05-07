@@ -162,7 +162,7 @@ export const hotelData: carouselPropsArray = {
     {
       id: 1,
       img: sBM,
-      title: "Wesela/Sale",
+      title: "Wesela/Plener",
       description: "Idealny po ciężkim dniu i nie tylko...",
       link: "wesela",
     },
@@ -183,7 +183,7 @@ export const hotelData: carouselPropsArray = {
     {
       id: 4,
       img: ev,
-      title: "Eventy",
+      title: "Eventy/Campery",
       description: "Pełen pakiet wellness dla wymagających...",
       link: "wydarzenia",
     },

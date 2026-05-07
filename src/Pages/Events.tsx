@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "../../styles/events.css";
 import "../../styles/buttons.css";
+import "../../styles/universal.css";
 import { Button } from "../components/button";
 import sa from "../assets/sauna-room.jpg";
-
+import { ImageSectionReverseX, ImageSectionX } from "../components/infoBox";
+import photo from "../assets/gym-room.webp";
+import HeaderText from "../components/headerText";
 export type event_props = {
   date: string;
   name: string;
@@ -57,27 +60,29 @@ export const Event = ({ date, description, name, tags, img }: event_props) => {
   // const [showTags, setShowTags] = useState(true);
 
   return (
-    <section
-      className={`event ${img ? "event--with-img" : ""}`}
-      title={`Wydarzenie ${name}, ${date}`}
-      style={img ? { backgroundImage: `url(${img})` } : {}}
-    >
-      <div className="event__content">
-        <h1>{name}</h1>
-        <h2>{date}</h2>
-        <p>{description}</p>
+    <>
+      <section
+        className={`event ${img ? "event--with-img" : ""}`}
+        title={`Wydarzenie ${name}, ${date}`}
+        style={img ? { backgroundImage: `url(${img})` } : {}}
+      >
+        <div className="event__content">
+          <h1>{name}</h1>
+          <h2>{date}</h2>
+          <p>{description}</p>
 
-        {tags && (
-          <div className="tags">
-            {tags.map((tag, index) => (
-              <span key={index} className="tag" title={tag}>
-                #{tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+          {tags && (
+            <div className="tags">
+              {tags.map((tag, index) => (
+                <span key={index} className="tag" title={tag}>
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 export const EventHandler = ({
@@ -135,7 +140,8 @@ export const EventPage = () => {
 
   return (
     <>
-      <aside className="event-asidebar" id="events" aria-label="">
+      <HeaderText subtext="Wydarzenia" text="Hotel Sylwia"></HeaderText>
+      <aside className="event-asidebar" id="events" aria-label="Wydarzenia">
         <Button
           _label="poprzedni miesiąc"
           _parent_id="events"
@@ -195,6 +201,31 @@ export const EventPage = () => {
         selected_date={selectedDate}
         filterMode={filterMode}
       />
+      <section aria-label="Eventy Firmowe">
+        <ImageSectionX
+          heading="Eventy Firmowe"
+          imageAlt="Sala konferencyjna"
+          title="Eventy firmowe"
+          description="Konferencje, Bankiety, szkolenia, integracje wszystko mamy"
+          linkText="OFERTA EVENTÓW"
+          linkHref="Oferta"
+          imageSrc={photo}
+          withButton
+        ></ImageSectionX>
+      </section>
+      <section aria-label="Kampery">
+        <ImageSectionReverseX
+          heading="Parking dla camperów"
+          imageAlt="Parking dla camperów"
+          title="Eventy firmowe"
+          description="Dogodna lokalizacja, Spokój i natura"
+          linkText="DOWIEDZ SIĘ WIĘCEJ"
+          linkHref=""
+          imageSrc={photo}
+          withButton
+          reverse
+        ></ImageSectionReverseX>
+      </section>
     </>
   );
 };

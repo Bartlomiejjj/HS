@@ -10,6 +10,7 @@ type ImageSectionProps = {
   linkHref: string;
   linkText: string;
   reverse?: boolean;
+  withButton?: boolean;
 };
 
 export const ImageSectionReverseX: React.FC<ImageSectionProps> = ({
@@ -19,6 +20,7 @@ export const ImageSectionReverseX: React.FC<ImageSectionProps> = ({
   description,
   linkHref,
   linkText,
+  withButton,
 }) => {
   const headingId = `${heading.replace(/\s+/g, "-").toLowerCase()}-heading`;
   const descriptionId = `${heading.replace(/\s+/g, "-").toLowerCase()}-desc`;
@@ -42,10 +44,22 @@ export const ImageSectionReverseX: React.FC<ImageSectionProps> = ({
           <p style={{ fontSize: "1.2em" }} id={descriptionId}>
             {description}
           </p>
-
-          <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
-            {linkText}
-          </a>
+          {withButton ? (
+            <>
+              <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
+                <button className="p-p">
+                  {linkText}
+                  <i></i>
+                </button>
+              </a>{" "}
+            </>
+          ) : (
+            <>
+              <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
+                {linkText}
+              </a>
+            </>
+          )}
         </aside>
       </div>
     </section>
@@ -58,6 +72,7 @@ export const ImageSectionX: React.FC<ImageSectionProps> = ({
   description,
   linkHref,
   linkText,
+  withButton,
 }) => {
   const headingId = `${heading.replace(/\s+/g, "-").toLowerCase()}-heading`;
   const descriptionId = `${heading.replace(/\s+/g, "-").toLowerCase()}-desc`;
@@ -69,7 +84,6 @@ export const ImageSectionX: React.FC<ImageSectionProps> = ({
     >
       <div className={"image-container"}>
         <img src={imageSrc} alt={imageAlt} />
-
         <aside
           className="info-box"
           role="region"
@@ -81,10 +95,22 @@ export const ImageSectionX: React.FC<ImageSectionProps> = ({
           <p style={{ fontSize: "1.2em" }} id={descriptionId}>
             {description}
           </p>
-
-          <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
-            {linkText}
-          </a>
+          {withButton ? (
+            <>
+              <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
+                <button className="p-p">
+                  {linkText}
+                  <i></i>
+                </button>
+              </a>{" "}
+            </>
+          ) : (
+            <>
+              <a href={linkHref} aria-label={`${linkText} – ${heading}`}>
+                {linkText}
+              </a>
+            </>
+          )}
         </aside>
       </div>
     </section>

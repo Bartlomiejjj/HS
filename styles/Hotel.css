@@ -11,9 +11,11 @@ html,body{
     scroll-behavior: smooth;
 }
 
+main.default body{
+    background-color: var(--secondary-90l);
+}
 body{
     position: relative;
-    background-color: var(--secondary-90l);
 }
 
 /* nav bar */
@@ -50,6 +52,8 @@ nav a:hover{
 nav a.active-link{
     background-color: var(--primary-50o);
     border-bottom: 2px solid var(--primary);
+    font-weight: bolder;
+    color: var(--black-75o);
 }
 
 nav a.accent-link{
@@ -96,6 +100,9 @@ header.image{
     position: relative;
     display: flex;
     justify-content: center;
+}
+header.weddingPage{
+    background-image: url("../src/assets/hotel-from-the-sky-two.jpg");
 }
 header.roomPage{
     background-image: url("../src/assets/triple-room.jpg");

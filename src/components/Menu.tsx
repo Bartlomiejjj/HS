@@ -15,7 +15,7 @@ export const RestaurantMenu = () => {
       fontFamily: "'Arial', sans-serif",
       color: "#333",
       width: "75vw",
-      height: "40vh",
+      height: "fit-content",
       margin: "0 auto",
       position: "relative" as const, // make buttons relative to section
     },
@@ -72,6 +72,7 @@ export const RestaurantMenu = () => {
     <section style={styles.section}>
       {/* Left Button */}
       <button
+        aria-label="poprzednia strona menu"
         style={{ ...styles.navButton, ...styles.leftButton }}
         onClick={() =>
           setActiveCategoryIndex(
@@ -79,7 +80,7 @@ export const RestaurantMenu = () => {
           )
         }
       >
-        ◀
+        {/* ◀ */}
       </button>
 
       {/* Category */}
@@ -89,12 +90,13 @@ export const RestaurantMenu = () => {
 
       {/* Right Button */}
       <button
+        aria-label="następna strona menu"
         style={{ ...styles.navButton, ...styles.rightButton }}
         onClick={() =>
           setActiveCategoryIndex((activeCategoryIndex + 1) % categories.length)
         }
       >
-        ▶
+        {/* ▶ */}
       </button>
 
       {/* Menu Items */}

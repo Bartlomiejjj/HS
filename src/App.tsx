@@ -82,64 +82,64 @@ function App() {
     switch (hash.toLowerCase()) {
       case "#/hotel":
         return (
-          <>
+          <main className="default">
             <HomePage />
-          </>
+          </main>
         );
 
       case "#/pokoje":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={false} />
             <RoomPage />
-          </>
+          </main>
         );
 
       case "#/pokoje/szczegoly":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <RoomsAll />
-          </>
+          </main>
         );
       case "#/pokoje/szczegoly#relaks":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <RoomsAll />
-          </>
+          </main>
         );
 
       case "#/restauracja":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <RestaurantPage />
-          </>
+          </main>
         );
 
       case "#/restauracja#sale":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <RestaurantPage />
-          </>
+          </main>
         );
 
       case "#/wesela":
         return (
-          <>
+          <main className="wedding">
             <NavPanel blackColor={true} />
             <WeddingPage />
-          </>
+          </main>
         );
 
       case "#/wydarzenia":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <EventPage />
-          </>
+          </main>
         );
 
       default:
@@ -147,10 +147,10 @@ function App() {
         window.location.hash = "#/hotel";
 
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={true} />
             <HomePage />
-          </>
+          </main>
         );
     }
   }

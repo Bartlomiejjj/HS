@@ -1,16 +1,59 @@
 
 :root{
-    --white: #ffffff;
+    --white: #FFFFFF;
+    --white-98: hsla(0, 0%, 98%, 1);
+    --white-95: hsla(0, 0%, 95%, 1);
+    --white-90: hsla(0, 0%, 90%, 1);
     --primary: #735039;
     --primary-50o: hsla(24, 34%, 34%, 0.5); /* o -> opacity*/
     --secondary: #BCA99A ;
     --secondary-90l: #ebe5e0 ; /*l -> light*/
     --tetriary: #8C9B9C ;
-    --tetriary-75o: hsla(184, 7%, 58%, 0.75) ; /*75% of opacity*/
+    --tetriary-75o: hsla(184, 7%, 58%, 0.749) ; /*75% of opacity*/
+    --tetriary-o: #3F4646 ; 
+    --tetriary-i: hsl(185, 5%, 47%) ; 
     --black: #000000;
     --black-25o: hsla(0, 0%, 0%, 0.25);
     --black-50o: hsla(0, 0%, 0%, 0.5);
+    --black-75o: hsla(0, 0%, 0%, 0.75);;
+    --black-90o: hsla(0, 0%, 0%, 0.9);
+
 }
+body ,footer{
+    background-color: var(--secondary-90l);
+}
+
+/*wedding colors*/
+body.wedding{
+    
+    --primary: #41431b;
+    --primary-50o: hsla(63, 43%, 18%,0.5);
+    --primary-90o: hsla(63, 43%, 18%,0.9);
+    --secondary: #AEB784;
+    --tetriary: #E3DBBB;
+
+    --additional: #F8F3E1;
+
+    --nPrimary: #615829;
+    --nSecondary: #4f5e26;
+    --nTetriary: #D2C693;
+
+    --black: var(--nSecondary);
+}
+body.wedding,body.wedding footer, body.wedding nav{
+    background-color: var(--white);
+}
+/* body.wedding nav a */
+body.wedding nav a.accent-link{
+    color: var(--white);
+    background-color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+} 
+body.wedding nav a.accent-link:hover{
+    background-color: var(--primary-90o);
+    border-bottom: 2px solid var(--primary);
+} 
+
 *{
     font-family: "Merriweather",serif;
     margin: 0;

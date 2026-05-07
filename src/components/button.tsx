@@ -8,7 +8,7 @@ export const Button = ({ _text, _label, _parent_id, _void }: button_props) => {
   return (
     <button
       onClick={_void}
-      className=""
+      className="p-s"
       title={_label}
       aria-label={_label}
       aria-labelledby={_parent_id}
