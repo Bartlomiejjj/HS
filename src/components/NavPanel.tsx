@@ -170,7 +170,7 @@ const NavPanel = ({ blackColor }: color) => {
               // className={path === "/Home" ? "active-link" : ""}
               // onClick={(e) => handleNavClick(e, "/Home")}
             >
-              K O N T A K T
+              KONTAKT
             </a>
           </li>
         </ul>

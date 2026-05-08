@@ -384,8 +384,8 @@ section a {
     position: relative;
     width: 50%;
     margin: 1em;
+    
 }
-
 
 .image-container .info-box h3{
     width: 100%;
@@ -434,14 +434,113 @@ section a {
     font-size: 1.5em;
     text-align: left;
     color: rgba(0, 0, 0, 0.8);
+    
+}
+.about p{
+    width: 95%;
+    background-color: var(--white-98);
+    padding: 4vw;
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+}
+@media screen and (max-width: 2560px){
+    header.text h2{
+        top: 12vh;
+    }
+    header.text{
+        padding-bottom: 20vh;
+    }
+    header.image h1{
+        font-size: 15em;
+    }
+    header.image p{
+        font-size: 5em;
+        top: 40vh;
+    }
+}
+@media screen and (max-width: 1920px){
+    header.text h2{
+        top: 12vh;
+    }
+    header.text{
+        padding-bottom: 20vh;
+    }
+    header.image p{
+        top: 40vh;
+    }
+}
+@media screen and (max-width: 1680px){
+    header.text h2{
+        top: 11vh;
+    }
+    header.text{
+        padding-bottom: 12vh;
+    }
+    header.image h1{
+        font-size: 8em;
+    }
+    header.image p{
+        top: 30vh;
+        font-size: 4em;
+    }
+}
+@media screen and (max-width: 1300px){
+    header.text h2{
+        top: 11vh;
+    }
+    header.text{
+        padding-bottom: 4vh;
+    }
+    header.image h1{
+        font-size: 8em;
+    }
+    header.image p{
+        font-size: 4em;
+    }
+        header.text h2{
+        top: 7vh;
+    }
 }
 
+@media screen and (max-width: 1000px){
+    header.text{
+        padding-bottom: 2vh;
+    }
+    header.text h2{
+        top: 7vh;
+    }
+    header.image h1{
+        font-size: 8em;
+    }
+    header.image p{
+        top: 35vh;
+        font-size: 4em;
+    }
+    .info-box{
+        font-size: 110%;
+    }
+    .image-container img{
+        width: 60%;
+    }
+}
 /* mobile */
 @media screen and (max-width: 800px){
-    .info-box {
-        /* color: rgba(0, 0, 0, 0.9); */
-        /* font-size: 110%; */
+    header.text{
+        padding-bottom: 1vh;
     }
+    header.text h2{
+        top: 5vh;
+    }
+
+    header.image h1{
+        font-size: 400%;
+    }
+    header.image p{
+        font-size: 2em;
+        top: 30vh;
+    }
+
     .element{
         overflow: hidden;
     }
@@ -504,15 +603,6 @@ section a {
         height: 95vh;
         top:-10px;
         z-index: -1;
-    }
-
-    header h1{
-        font-size: 17.5vw;
-    }
-
-    header p{
-        top: 28vh;
-        font-size: 8vw;
     }
 
     .image-container{

@@ -141,66 +141,69 @@ export const EventPage = () => {
   return (
     <>
       <HeaderText subtext="Wydarzenia" text="Hotel Sylwia"></HeaderText>
-      <aside className="event-asidebar" id="events" aria-label="Wydarzenia">
-        <Button
-          _label="poprzedni miesiąc"
-          _parent_id="events"
-          _text="<"
-          _void={prevMonth}
-        ></Button>
+      <section aria-label="wydarzenia">
+        <aside className="event-asidebar" id="events" aria-label="Wydarzenia">
+          <Button
+            _label="poprzedni miesiąc"
+            _parent_id="events"
+            _text="<"
+            _void={prevMonth}
+          ></Button>
 
-        <input
-          type="date"
-          value={selectedDate}
-          min={getTodaysYear()}
-          onChange={(e) => setSelectedDate(e.currentTarget.value)}
+          <input
+            type="date"
+            value={selectedDate}
+            min={getTodaysYear()}
+            onChange={(e) => setSelectedDate(e.currentTarget.value)}
+          />
+
+          <Button
+            _parent_id="events"
+            _label="przyszły miesiąc"
+            _text=">"
+            _void={nextMonth}
+          ></Button>
+        </aside>
+
+        <div className="filter-buttons ">
+          <button
+            className={filterMode === "day" ? "active" : ""}
+            onClick={() => setFilterMode("day")}
+          >
+            Dzień
+          </button>
+
+          <button
+            className={filterMode === "month" ? "active" : ""}
+            onClick={() => setFilterMode("month")}
+          >
+            Miesiąc
+          </button>
+
+          <button
+            className={filterMode === "year" ? "active" : ""}
+            onClick={() => setFilterMode("year")}
+          >
+            Wszystkie w tym roku
+          </button>
+        </div>
+        <aside className="asideTag">
+          {filterMode == "day"
+            ? "Wszystkie wydarzenia w tym dniu"
+            : filterMode == "month"
+            ? "Wszystkie wydarzenia w tym miesiącu"
+            : filterMode == "year"
+            ? "Wszystkie wydarzenia w tym roku"
+            : ""}
+        </aside>
+        <EventHandler
+          e={events_list.e}
+          selected_date={selectedDate}
+          filterMode={filterMode}
         />
-
-        <Button
-          _parent_id="events"
-          _label="przyszły miesiąc"
-          _text=">"
-          _void={nextMonth}
-        ></Button>
-      </aside>
-
-      <div className="filter-buttons ">
-        <button
-          className={filterMode === "day" ? "active" : ""}
-          onClick={() => setFilterMode("day")}
-        >
-          Dzień
-        </button>
-
-        <button
-          className={filterMode === "month" ? "active" : ""}
-          onClick={() => setFilterMode("month")}
-        >
-          Miesiąc
-        </button>
-
-        <button
-          className={filterMode === "year" ? "active" : ""}
-          onClick={() => setFilterMode("year")}
-        >
-          Wszystkie w tym roku
-        </button>
-      </div>
-      <aside>
-        <b>#</b>
-        {filterMode == "day"
-          ? "Wszystkie wydarzenia w tym dniu"
-          : filterMode == "month"
-          ? "Wszystkie wydarzenia w tym miesiącu"
-          : filterMode == "year"
-          ? "Wszystkie wydarzenia w tym roku"
-          : ""}
-      </aside>
-      <EventHandler
-        e={events_list.e}
-        selected_date={selectedDate}
-        filterMode={filterMode}
-      />
+      </section>
+      <br />
+      <hr />
       <section aria-label="Eventy Firmowe">
         <ImageSectionX
           heading="Eventy Firmowe"
@@ -213,6 +216,7 @@ export const EventPage = () => {
           withButton
         ></ImageSectionX>
       </section>
+      <hr />
       <section aria-label="Kampery">
         <ImageSectionReverseX
           heading="Parking dla camperów"

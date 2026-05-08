@@ -14,8 +14,8 @@ const HomePage = () => {
         <h1>Hotel Sylwia</h1>
         <p>Cisza i spokoj</p>
       </header>
-
-      {/* <BreakTitle title="Hotel Sylwia"></BreakTitle> */}
+      <BreakTitle title="Oferujemy"></BreakTitle>
+      <Carousel props={hotelData.props}></Carousel>
       <section aria-label="O Hotelu" className="about">
         <img
           src={logo}
@@ -33,8 +33,7 @@ const HomePage = () => {
           organizację wesel, szkolenie oraz konferencji.
         </p>
       </section>
-      <BreakTitle title="Oferujemy"></BreakTitle>
-      <Carousel props={hotelData.props}></Carousel>
+      <BreakTitle title="Udogodnienia"></BreakTitle>
       <ImageSectionX
         heading="Winda"
         description="Dzięki uzyskanemu dofinansowaniu z uni europejskiej, mamy nową winde dla starszych i nie tylko..."

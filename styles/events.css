@@ -37,6 +37,12 @@ section.event {
     padding: 2rem;
     height: fit-content;
     word-break: break-word;
+    /*additional*/
+    background-color: var(--white-95);
+    padding: 4vw;
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
 
     /* overflow-wrap: break-word; */
 }
@@ -46,4 +52,14 @@ section.event img{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.asideTag{
+        /*additional*/
+    width: 95%;
+    margin: auto;
+    background-color: var(--white-98);
+    padding: 1vh;
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
 }
