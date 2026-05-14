@@ -8,7 +8,7 @@ export default function BreakTitle({ title }: props) {
       // style={{ position: "sticky", top: 0 }}
     >
       {/* <hr /> */}
-      <h1>{title}</h1>
+      <h1 style={{ fontWeight: "normal" }}>{title}</h1>
       <hr />
     </section>
   );

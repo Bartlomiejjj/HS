@@ -128,7 +128,9 @@
     width: 95%;
     background-color: var(--white-98);
     padding: 4vw;
-    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000; */
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
     margin-top: 1vh;
     margin-bottom: 4vh;
 }

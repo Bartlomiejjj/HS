@@ -6,13 +6,12 @@ import { ImageSectionX } from "../components/infoBox";
 import ele from "../assets/elevator.jpg";
 import { GalleryWithMoreImages } from "../components/gallery";
 const HomePage = () => {
-  //   window.loca;
   return (
     <>
       <header className="homePage image">
         <div className="over"></div>
         <h1>Hotel Sylwia</h1>
-        <p>Cisza i spokoj</p>
+        <p>Wypoczynek i nie tylko</p>
       </header>
       <BreakTitle title="Oferujemy"></BreakTitle>
       <Carousel props={hotelData.props}></Carousel>
@@ -43,6 +42,9 @@ const HomePage = () => {
         linkText=""
         title="Winda"
       ></ImageSectionX>
+      <BreakTitle title="Wynajem Bus-a"></BreakTitle>
+      <BreakTitle title="Kampery"></BreakTitle>
+
       <BreakTitle title="Galeria"></BreakTitle>
       <GalleryWithMoreImages
         galleryWithImages={galleryData}

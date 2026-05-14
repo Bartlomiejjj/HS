@@ -5,6 +5,7 @@ import Carousel from "../components/chooser";
 import { GalleryWithMoreImages } from "../components/gallery";
 import HeaderText from "../components/headerText";
 import { RestaurantMenu } from "../components/Menu";
+import "../../styles/restaurant.css";
 import {
   galleryWithImagesData_restaurantRooms,
   restaurantRoomCarouselArray,
@@ -69,7 +70,7 @@ export const RestaurantPage = () => {
       {/* <section id="sniadaniowa"></section>
       <section id="mala"></section> */}
       <BreakTitle title="Menu: "></BreakTitle>
-      <section id="menu">
+      <section id="menu" className="restaurantMenu">
         <RestaurantMenu></RestaurantMenu>
       </section>
       <BreakTitle title="Sale: "></BreakTitle>

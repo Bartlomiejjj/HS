@@ -7,6 +7,7 @@ import RoomsAll from "./Pages/RoomsAll";
 import { RestaurantPage } from "./Pages/Restaurant";
 import { WeddingPage } from "./Pages/Wedding";
 import { EventPage } from "./Pages/Events";
+import { Contact } from "./components/contact";
 
 function App() {
   // ✅ HASH STATE (this makes React re-render)
@@ -83,6 +84,7 @@ function App() {
       case "#/hotel":
         return (
           <main className="default">
+            <NavPanel blackColor={false}></NavPanel>
             <HomePage />
           </main>
         );
@@ -129,7 +131,7 @@ function App() {
       case "#/wesela":
         return (
           <main className="wedding">
-            <NavPanel blackColor={true} />
+            <NavPanel blackColor={false} />
             <WeddingPage />
           </main>
         );
@@ -158,6 +160,7 @@ function App() {
   return (
     <>
       {reLinker(hash)}
+      <Contact></Contact>
       <Footer />
     </>
   );

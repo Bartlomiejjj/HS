@@ -46,7 +46,7 @@ export const galleryData_relax = [
   {
     id: 2,
     img: mass0,
-    title: "Masaż",
+    title: "Spa",
     description:
       "Idealne miejsce na relaks po długim dniu. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut temporibus fuga perspiciatis corrupti a sapiente minima eaque amet sunt, hic quod delectus, eos doloribus animi id magni soluta voluptatum! Ut?",
     icon: massageIcon,
@@ -140,7 +140,7 @@ export const relaxData: carouselPropsArray = {
     {
       id: 2,
       img: mass0,
-      title: "Masaż",
+      title: "Spa",
       description: "Idealne miejsce na odpoczynek i regenerację...",
       link: "pokoje/szczegoly#relaks",
     },
@@ -161,29 +161,29 @@ export const hotelData: carouselPropsArray = {
   props: [
     {
       id: 1,
-      img: sBM,
-      title: "Wesela/Plener",
-      description: "Idealny po ciężkim dniu i nie tylko...",
-      link: "wesela",
-    },
-    {
-      id: 2,
-      img: rest,
-      title: "Bar/Restauracja",
-      description: "Idealne miejsce na odpoczynek i regenerację...",
-      link: "restauracja",
-    },
-    {
-      id: 3,
       img: sing0,
-      title: "Pokoje/Relaks",
+      title: "Pokoje & Relaks",
       description: "Pełen pakiet wellness dla wymagających...",
       link: "pokoje",
     },
     {
+      id: 2,
+      img: sBM,
+      title: "Wesela & Plener",
+      description: "Idealny po ciężkim dniu i nie tylko...",
+      link: "wesela",
+    },
+    {
+      id: 3,
+      img: rest,
+      title: "Bar & Restauracja",
+      description: "Idealne miejsce na odpoczynek i regenerację...",
+      link: "restauracja",
+    },
+    {
       id: 4,
       img: ev,
-      title: "Eventy/Campery",
+      title: "Eventy & Campery",
       description: "Pełen pakiet wellness dla wymagających...",
       link: "wydarzenia",
     },

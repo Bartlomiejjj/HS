@@ -217,10 +217,16 @@ export function GalleryWithMoreImages({
       </div>
 
       {/* INFO */}
-      <div className="info-box-gallery">
-        <h3>{current.title}</h3>
-        <p>{current.description}</p>
-      </div>
+      {current.description ? (
+        <>
+          <div className="info-box-gallery">
+            <h3>{current.title}</h3>
+            <p>{current.description}</p>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
 
       {/* MODAL OVERLAY */}
       {isModalOpen && (

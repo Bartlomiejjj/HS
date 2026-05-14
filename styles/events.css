@@ -17,10 +17,10 @@ aside.event-asidebar button, input{
     text-align: center;
 }
 .filter-buttons button:hover{
-    background-color: var(--black-25o);
+    background-color: #00000020;
 }
 .filter-buttons button.active{
-    background-color: var(--black-25o);
+    background-color: #00000020;
 }
 main.events{
     display: flex;
@@ -40,7 +40,9 @@ section.event {
     /*additional*/
     background-color: var(--white-95);
     padding: 4vw;
-    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;*/
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
     margin-top: 1vh;
     margin-bottom: 4vh;
 
@@ -59,7 +61,9 @@ section.event img{
     margin: auto;
     background-color: var(--white-98);
     padding: 1vh;
-    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000; */
+        box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
     margin-top: 1vh;
     margin-bottom: 4vh;
 }

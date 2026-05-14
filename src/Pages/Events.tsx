@@ -216,7 +216,6 @@ export const EventPage = () => {
           withButton
         ></ImageSectionX>
       </section>
-      <hr />
       <section aria-label="Kampery">
         <ImageSectionReverseX
           heading="Parking dla camperów"

@@ -39,8 +39,10 @@ export default function Carousel({ props, link }: carouselPropsArray) {
 
             <aside className="info-box-chooser">
               <h3 style={{ fontSize: "1.5em" }}>{item.title}</h3>
-              <p style={{ fontSize: "1.2em" }}>{item.description}</p>
+              {/* <p style={{ fontSize: "1.2em" }}>{item.description}</p> */}
               <a
+                aria-label={`${item.title}`}
+                title={`przejdź na podstrone ${item.title}`}
                 style={{ fontSize: "1.2em" }}
                 href={item.link ? "#" + item.link : "#" + link}
                 onClick={(e) => {

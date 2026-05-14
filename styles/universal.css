@@ -20,7 +20,9 @@
 
 }
 body ,footer{
-    background-color: var(--secondary-90l);
+    /* background-color: var(--secondary-90l); */
+    background-color: var(--white-98);
+
 }
 
 /*wedding colors*/
