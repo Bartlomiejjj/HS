@@ -61,13 +61,13 @@ export default function Gallery({ gallery }: content) {
     <div className="gallery-container">
       <div className="gallery-image-wrapper">
         <button className="nav-button left" onClick={prevSlide}>
-          ◀
+          {/* ◀ */}
         </button>
 
         <img src={current.img} alt={current.title} className="gallery-image" />
 
         <button className="nav-button right" onClick={nextSlide}>
-          ▶
+          {/* ▶ */}
         </button>
       </div>
 
@@ -188,7 +188,7 @@ export function GalleryWithMoreImages({
       {/* IMAGE SLIDER */}
       <div className="gallery-image-wrapper">
         <button className="nav-button left" onClick={prevImage}>
-          ◀
+          {/* ◀ */}
         </button>
         <img
           key={imageIndex}
@@ -199,7 +199,7 @@ export function GalleryWithMoreImages({
           style={{ cursor: "pointer" }}
         />
         <button className="nav-button right" onClick={nextImage}>
-          ▶
+          {/* ▶ */}
         </button>
       </div>
 
@@ -217,10 +217,16 @@ export function GalleryWithMoreImages({
       </div>
 
       {/* INFO */}
-      <div className="info-box-gallery">
-        <h3>{current.title}</h3>
-        <p>{current.description}</p>
-      </div>
+      {current.description ? (
+        <>
+          <div className="info-box-gallery">
+            <h3>{current.title}</h3>
+            <p>{current.description}</p>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
 
       {/* MODAL OVERLAY */}
       {isModalOpen && (
@@ -229,7 +235,8 @@ export function GalleryWithMoreImages({
             ✕
           </button>
           <button style={prevButton} onClick={prevImage}>
-            ◀
+            <i></i>
+            {/* ◀ */}
           </button>
 
           <img
@@ -239,7 +246,7 @@ export function GalleryWithMoreImages({
           />
 
           <button style={nextButton} onClick={nextImage}>
-            ▶
+            {/* ▶ */}
           </button>
         </div>
       )}

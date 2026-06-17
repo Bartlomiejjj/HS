@@ -13,6 +13,17 @@ export default function Carousel({ props, link }: carouselPropsArray) {
 
     return () => clearInterval(interval);
   }, []);
+
+  // const [path, setPath] = useState(window.location.hash);
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    to: string
+  ) => {
+    e.preventDefault(); // prevent page reload
+    // setPath("/HS/#" + to); // update state for re-render
+    window.history.pushState({}, "", "/HS/#" + to); // update URL
+    window.location.reload();
+  };
   return (
     <section className=" panel carousel-small">
       <div className="group-small">
@@ -28,10 +39,19 @@ export default function Carousel({ props, link }: carouselPropsArray) {
 
             <aside className="info-box-chooser">
               <h3 style={{ fontSize: "1.5em" }}>{item.title}</h3>
-              <p style={{ fontSize: "1.2em" }}>{item.description}</p>
+              {/* <p style={{ fontSize: "1.2em" }}>{item.description}</p> */}
               <a
+                aria-label={`${item.title}`}
+                title={`przejdź na podstrone ${item.title}`}
                 style={{ fontSize: "1.2em" }}
-                href={item.link ? item.link : link}
+                href={item.link ? "#" + item.link : "#" + link}
+                onClick={(e) => {
+                  handleNavClick(
+                    e,
+                    item.link ? "/" + item.link : link ? "/" + link : "/"
+                  );
+                  // scrollToId(item.link ? item.link : "");
+                }}
               >
                 Szczegóły
               </a>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Hotel.css";
 import "../../styles/animations.css";
+import "../../styles/navigationPanel.css";
 import navbarIcon2 from "../../src/assets/icons/navbarIcon_2.svg";
 import navbarIcon2_black from "../../src/assets/icons/navbarIcon_2_black.png";
 import navbarCloseIcon from "../../src/assets/icons/navbarCloseIcon.svg";
+import slogo from "../../src/assets/logos/mlogo.png";
 type color = {
   blackColor: boolean;
 };
@@ -57,7 +59,7 @@ const NavPanel = ({ blackColor }: color) => {
       media.removeEventListener("change", updateNavbar);
     };
   }, []);
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(window.location.hash);
 
   // update path when back/forward buttons are pressed
   useEffect(() => {
@@ -70,9 +72,18 @@ const NavPanel = ({ blackColor }: color) => {
     to: string
   ) => {
     e.preventDefault(); // prevent page reload
-    setPath(to); // update state for re-render
-    window.history.pushState({}, "", to); // update URL
+    setPath("/HS/#" + to); // update state for re-render
+    window.history.pushState({}, "", "/HS/#" + to); // update URL
+    window.location.reload();
   };
+  // const scrollToId = (id: string) => {
+  //   setTimeout(() => {
+  //     document.getElementById(id)?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }, 50);
+  // };
   return (
     <div className="element">
       <button
@@ -102,65 +113,90 @@ const NavPanel = ({ blackColor }: color) => {
           <img src={navbarCloseIcon} alt="zamknij-pasek-nawigacyjny" />
         </button>
         <ul>
-          <li className="home-li">
+          <li
+            title="przejdź do strony hotelu Sylwia"
+            aria-label="przejdź do strony hotelu Sylwia"
+            className="home-li"
+          >
             <a
-              href="/hotel"
-              className={path === "/hotel" ? "active-link" : ""}
+              href="#/hotel"
+              className={path && path.includes("/hotel") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/hotel")}
               aria-current="page"
             >
-              H O T E L
+              {/* <img src={logo} alt="Hotel Sylwia" width={"120vw"} /> */}
+              <img
+                src={slogo}
+                alt="Hotel Sylwia"
+                width={"30vw"}
+                // height={"30vh"}
+              />
             </a>
           </li>
-          <li className="">
+          <li
+            title="pokoje oraz strefa relaksu"
+            aria-label="przejdź do strony pokoi oraz strefy relaksu hotelu Sylwia"
+            className=""
+          >
             <a
-              href="/pokoje"
+              href="#/pokoje"
               className={path && path.includes("/pokoje") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/pokoje")}
               aria-current="page"
             >
-              Pokoje
+              Pokoje & Relaks
             </a>
           </li>
           <li>
             <a
-              href="/restauracja"
+              title="Restauracja oraz Sale"
+              aria-label="przejdź do strony restauracji oraz sali hotelu Sylwia"
+              href="#/restauracja"
               className={
                 path && path.includes("/restauracja") ? "active-link" : ""
               }
               onClick={(e) => handleNavClick(e, "/restauracja")}
             >
-              Restauracja
+              Restauracja & Sale
             </a>
           </li>
           <li>
             <a
-              href="/wesela"
+              title="Wesele oraz Plener"
+              aria-label="przejdź do strony Weselnej oraz plenerowej hotelu Sylwia"
+              href="#/wesela"
               className={path && path.includes("wesela") ? "active-link" : ""}
               onClick={(e) => handleNavClick(e, "/wesela")}
             >
-              Wesela
+              Wesela & Plener
             </a>
           </li>
           <li>
             <a
-              href="/wydarzenia"
+              title="wydarzenia oraz parking dla Kamperów"
+              aria-label="przejdź do strony z wydarzeniami oraz parkingu dla kamperów hotelu Sylwia"
+              href="#/wydarzenia"
               className={
                 path && path.includes("/wydarzenia") ? "active-link" : ""
               }
               onClick={(e) => handleNavClick(e, "/wydarzenia")}
             >
-              Eventy
+              Wydarzenia & Kampery
             </a>
           </li>
           <li>
             <a
-              href="#footer"
+              title="Kontakt z hotelem"
+              aria-label="przejdź do kontaktu z hotelem Sylwia"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView();
+              }}
               className="accent-link"
               // className={path === "/Home" ? "active-link" : ""}
               // onClick={(e) => handleNavClick(e, "/Home")}
             >
-              K O N T A K T
+              KONTAKT
             </a>
           </li>
         </ul>

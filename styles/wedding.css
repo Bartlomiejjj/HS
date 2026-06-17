@@ -1,0 +1,501 @@
+button{
+    min-width: 4rem;
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+
+/* PRIMARY */
+button.p-p{
+    position: relative;
+    overflow: hidden;
+    background: var(--nSecondary);
+    color: white;
+}
+
+/* fill */
+button.p-p::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: var(--white);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+button.p-p:hover::before{
+    transform: scaleX(1);
+}
+button.p-p:focus::before{
+    transform: scaleX(1);
+}
+/* TEXT */
+button.p-p span{
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.2s ease;
+}
+
+button.p-p:hover span{
+    opacity: 0;
+    transition-delay: 0.2s;
+}
+button.p-p:focus span{
+    opacity: 0;
+    transition-delay: 0.2s;
+}
+/* OGON (linia) */
+button.p-p::after{
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: -40px;
+
+    width: 30px;
+    height: 2px;
+    background: var(--nSecondary);
+
+    transform: translateY(-50%);
+    opacity: 0;
+
+    transition: all 0.4s ease;
+    transition-delay: 0.05s;
+}
+
+/* GROT */
+button.p-p i{
+    position: absolute;
+
+    top: 50%;
+    left: -10px;
+
+    width: 10px;
+    height: 10px;
+
+    border-top: 2px solid var(--nSecondary);
+    border-right: 2px solid var(--nSecondary);
+
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0;
+
+    transition: all 0.4s ease;
+    transition-delay: 0.05s;
+}
+
+/* HOVER → wlatuje */
+button.p-p:hover::after{
+    left: 50%;
+    transform: translate(-60%, -50%);
+    opacity: 1;
+}
+
+button.p-p:hover i{
+    left: 50%;
+    transform: translate(-10%, -50%) rotate(45deg);
+    opacity: 1;
+}
+
+button.p-p:focus::after{
+    left: 50%;
+    transform: translate(-60%, -50%);
+    opacity: 1;
+}
+
+button.p-p:focus i{
+    left: 50%;
+    transform: translate(-10%, -50%) rotate(45deg);
+    opacity: 1;
+}
+
+/*images*/
+/* .wedding.images{
+    position: relative;
+    min-height: fit-content;
+    margin-bottom: 45vh;
+}
+.wedding.images img:first-child{
+    position: absolute;
+    left: 5vw;
+}
+.wedding.images img:last-child{
+    position: absolute;
+    width: 70%;
+    right: 0;
+    top: 5vh;
+} */
+
+/* =========================
+   WEDDING IMAGE GALLERY
+========================= */
+/* =========================
+   WEDDING EDITORIAL GALLERY
+========================= */
+
+.wedding.images{
+    position: relative;
+
+    width: 100%;
+    max-width: 72rem;
+
+    height: 44rem;
+
+    margin: 10rem auto;
+
+    overflow: visible;
+}
+
+/* =========================
+   SHARED IMAGE STYLE
+========================= */
+
+.wedding.images img{
+    position: absolute;
+
+    object-fit: cover;
+
+    border: .45rem solid var(--additional);
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    filter:
+        brightness(.96)
+        saturate(.9);
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.08);
+
+    transition:
+        transform .75s cubic-bezier(.19,1,.22,1),
+        box-shadow .75s ease,
+        filter .75s ease;
+}
+
+/* subtle dim effect */
+.wedding.images:hover img:not(:hover){
+    filter:
+        brightness(.82)
+        saturate(.75);
+
+    transform: scale(.985);
+}
+
+/* hover focus */
+.wedding.images img:hover{
+    z-index: 20;
+
+    filter:
+        brightness(1)
+        saturate(1);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.18),
+        0 10px 20px rgba(0,0,0,.08);
+}
+
+/* =========================
+   NORMAL LAYOUT
+========================= */
+
+/* portrait (left) */
+.wedding.images img:first-child{
+    left: 4vw;
+    top: 0;
+
+    width: 24rem;
+    height: 34rem;
+
+    z-index: 0;
+
+    transform: rotate(-2deg);
+}
+
+/* landscape (right) */
+.wedding.images img:last-child{
+    right: 0;
+    top: 9rem;
+
+    width: 44rem;
+    height: 25rem;
+
+    z-index: 0;
+
+    transform:
+        translateX(-8%)
+        rotate(1.5deg);
+}
+
+/* hover motion (normal) */
+.wedding.images img:first-child:hover{
+    z-index: 1;
+    transform:
+        translate(4rem, 1.5rem)
+        rotate(0deg)
+        scale(1.08);
+}
+
+.wedding.images img:last-child:hover{
+    z-index: 1;
+    transform:
+        translate(-3rem, -1rem)
+        rotate(0deg)
+        scale(1.08);
+}
+
+/* =========================
+   REVERSE LAYOUT
+   (just add .reverse to section)
+========================= */
+
+/* portrait moves RIGHT */
+.wedding.images.reverse img:first-child{
+    left: auto;
+    right: 4vw;
+
+    transform: rotate(2deg);
+}
+
+/* landscape moves LEFT */
+.wedding.images.reverse img:last-child{
+    right: auto;
+    left: 0;
+
+    transform:
+        translateX(8%)
+        rotate(-1.5deg);
+}
+
+/* reverse hover adjustments */
+.wedding.images.reverse img:first-child:hover{
+    transform:
+        translate(-4rem, 1.5rem)
+        rotate(0deg)
+        scale(1.08);
+}
+
+.wedding.images.reverse img:last-child:hover{
+    transform:
+        translate(3rem, -1rem)
+        rotate(0deg)
+        scale(1.08);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px){
+
+    .wedding.images{
+        height: 36rem;
+    }
+
+    .wedding.images img:first-child{
+        width: 18rem;
+        height: 26rem;
+    }
+
+    .wedding.images img:last-child{
+        width: 30rem;
+        height: 18rem;
+        top: 7rem;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px){
+
+    .wedding.images{
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 1.5rem;
+
+        height: auto;
+
+        margin: 5rem auto;
+    }
+
+    .wedding.images img{
+        position: static !important;
+
+        width: 100% !important;
+        max-width: 24rem;
+
+        height: auto !important;
+
+        transform: none !important;
+    }
+
+    .wedding.images img:hover{
+        transform: scale(1.03) !important;
+    }
+}
+
+
+
+/* =========================
+   STACK LAYOUT (MULTI IMAGE)
+========================= */
+
+.wedding.images.stack{
+    position: relative;
+
+    width: 100%;
+    max-width: 72rem;
+
+    margin: 10rem auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    height: fit-content; /* ✅ ADD THIS */
+}
+
+/* =========================
+   BASE STACK IMAGE BEHAVIOR
+========================= */
+
+.wedding.images.stack img{
+    position: relative;
+
+    cursor: pointer;
+
+    z-index: 0;
+
+    transition:
+        transform .75s cubic-bezier(.19,1,.22,1),
+        box-shadow .75s ease,
+        filter .75s ease;
+
+    margin-left: -2.5rem;
+}
+
+/* first image reset overlap */
+.wedding.images.stack img:first-child{
+    margin-left: 0;
+}
+
+/* =========================
+   VERTICAL vs HORIZONTAL LOGIC
+========================= */
+
+/* VERTICAL (portrait images) */
+.wedding.images.stack img.vertical{
+    width: 22rem;
+    height: 34rem;
+
+    transform: rotate(-1.5deg) translateY(1rem);
+}
+
+/* HORIZONTAL (landscape images) */
+.wedding.images.stack img.horizontal{
+    width: 40rem;
+    height: 24rem;
+
+    transform: rotate(1.5deg) translateY(-1rem);
+}
+
+/* fallback if no class is given */
+.wedding.images.stack img:not(.vertical):not(.horizontal){
+    width: 30rem;
+    height: 24rem;
+}
+
+/* =========================
+   EDITORIAL OVERLAP RHYTHM
+========================= */
+
+/* gentle alternating layering */
+.wedding.images.stack img:nth-child(odd){
+    z-index: 0;
+}
+
+.wedding.images.stack img:nth-child(even){
+    z-index: 0;
+}
+
+/* tighter flow between items */
+.wedding.images.stack img:not(:first-child){
+    margin-top: -2rem;
+}
+
+/* =========================
+   HOVER SYSTEM
+========================= */
+
+.wedding.images.stack img:hover{
+    z-index: 10;
+
+    transform:
+        translateY(-1.2rem)
+        scale(1.06)
+        rotate(0deg);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.18),
+        0 10px 20px rgba(0,0,0,.08);
+
+    filter: brightness(1) saturate(1);
+}
+
+/* dim others */
+.wedding.images.stack:hover img:not(:hover){
+    filter: brightness(.85) saturate(.75);
+    transform: scale(.97);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px){
+
+    .wedding.images.stack img.vertical{
+        width: 18rem;
+        height: 28rem;
+    }
+
+    .wedding.images.stack img.horizontal{
+        width: 30rem;
+        height: 18rem;
+    }
+
+    .wedding.images.stack img:not(:first-child){
+        margin-top: -1rem;
+    }
+}
+
+@media (max-width: 640px){
+
+    .wedding.images.stack{
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .wedding.images.stack img{
+        width: 100% !important;
+        max-width: 24rem !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .wedding.images.stack img:hover{
+        transform: scale(1.03) !important;
+    }
+}

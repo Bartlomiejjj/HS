@@ -3,7 +3,7 @@
 ========================= */
 .gallery-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -124,21 +124,40 @@
 ========================= */
 .info-box-gallery {
     margin: 2.5%;
+    /*additional*/
+    width: 95%;
+    background-color: var(--white-98);
+    padding: 4vw;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000; */
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
 }
 
 .info-box-gallery h3 {
   margin: 0 0 8px;
+  font-size: 2.5em;
 }
 
 .info-box-gallery p {
   margin: 0;
-  font-size: 14px;
+  font-size: 1.5em;
   color: #333;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
+
+
+@media (max-width: 2560px) {
+  .gallery-image-wrapper{
+    height: 500px;
+    
+  }
+}
+
 @media (max-width: 768px) {
   .gallery-image-wrapper {
     height: 400px; /* KEEP ORIGINAL HEIGHT even on mobile */

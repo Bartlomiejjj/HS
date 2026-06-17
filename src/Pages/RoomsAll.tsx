@@ -11,6 +11,7 @@ export default function RoomsAll() {
   useEffect(() => {
     const scrollToHash = () => {
       const hash = window.location.hash;
+      console.log(hash);
       if (hash) {
         const el = document.querySelector<HTMLElement>(hash);
         if (el) {

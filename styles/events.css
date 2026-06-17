@@ -1,0 +1,69 @@
+aside.event-asidebar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+aside.event-asidebar button, input{
+    scale: 1;
+    opacity: 1;
+    width: 7rem;
+    font-weight: bolder;
+    font-size: 1em;
+}
+.filter-buttons{
+    margin: 0.2vh;
+    text-align: center;
+}
+.filter-buttons button:hover{
+    background-color: #00000020;
+}
+.filter-buttons button.active{
+    background-color: #00000020;
+}
+main.events{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10vh; */
+    /* width: 50%; */
+    height: fit-content;
+}
+section.event {
+    margin: 0.5rem;
+    background-color: var(--black-25o);
+    padding: 2rem;
+    height: fit-content;
+    word-break: break-word;
+    /*additional*/
+    background-color: var(--white-95);
+    padding: 4vw;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000;*/
+    box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+
+    /* overflow-wrap: break-word; */
+}
+
+section.event img{
+    /* background-image: 2; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.asideTag{
+        /*additional*/
+    width: 95%;
+    margin: auto;
+    background-color: var(--white-98);
+    padding: 1vh;
+    /* box-shadow: 0.1rem 0.1rem 1rem 0.2rem #000000; */
+        box-shadow: 0.1rem 0.1rem 1rem 0.2rem #00000052;
+    border: solid 0.15rem #00000052;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+}

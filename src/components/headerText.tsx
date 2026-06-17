@@ -4,7 +4,7 @@ type props = {
 };
 const HeaderText = ({ text, subtext }: props) => {
   return (
-    <header className="text">
+    <header className="text" style={{ zIndex: "-1" }}>
       <h1 className="headerText">{text}</h1>
       <h2 className="headerSubText">{subtext}</h2>
     </header>

@@ -1,5 +1,4 @@
-// import "../styles/style.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import RoomPage from "./Pages/Room";
 import HomePage from "./Pages/Home";
 import NavPanel from "./components/NavPanel";
@@ -8,140 +7,161 @@ import RoomsAll from "./Pages/RoomsAll";
 import { RestaurantPage } from "./Pages/Restaurant";
 import { WeddingPage } from "./Pages/Wedding";
 import { EventPage } from "./Pages/Events";
+import { Contact } from "./components/contact";
 
 function App() {
+  // ✅ HASH STATE (this makes React re-render)
+  const [hash, setHash] = useState(window.location.hash || "#/hotel");
+
+  // ✅ Listen to hash changes (back/forward + clicks)
   useEffect(() => {
-    // Animate panels
-    const panels = document.querySelectorAll(".panel");
-    panels.forEach((panel) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              panel.classList.add("animate");
-              observer.unobserve(panel);
-            }
-          });
-        },
-        { threshold: 0.05 }
-      );
-      observer.observe(panel);
-    });
+    const handleHashChange = () => {
+      const fullHash = window.location.hash || "#/hotel";
 
-    // Animate boxes inside panels
-    const boxes = document.querySelectorAll(".box");
-    boxes.forEach((box) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              box.classList.add("animate");
-              observer.unobserve(box);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(box);
-    });
+      // remove first "#"
+      const cleaned = fullHash.startsWith("#") ? fullHash.slice(1) : fullHash;
 
-    const panelsLeft = document.querySelectorAll(".panel-left");
-    panelsLeft.forEach((box) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              box.classList.add("animate");
-              observer.unobserve(box);
-            }
+      // split route vs anchor
+      const [routePart, anchor] = cleaned.split("#");
+
+      const route = routePart || "/hotel";
+
+      setHash(`#${route}`);
+
+      window.scrollTo(0, 0);
+
+      // scroll AFTER render
+      if (anchor) {
+        setTimeout(() => {
+          document.getElementById(anchor)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(box);
-    });
-    const panelsRight = document.querySelectorAll(".panel-right");
-    panelsRight.forEach((box) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              box.classList.add("animate");
-              observer.unobserve(box);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(box);
-    });
-    // Scroll to top on mount
-    window.scrollTo(0, 0);
+        }, 50);
+      }
+    };
+    console.log(window.location.hash);
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
-  function getPathname() {
-    return window.location.pathname;
-  }
-  console.log(window.location.pathname);
-  function reLinker(pathname: string) {
-    switch (pathname.toLowerCase()) {
-      case "/hotel":
-        return (
-          <>
-            {/* <NavPanel blackColor={true}></NavPanel> */}
-            <HomePage></HomePage>;
-          </>
+
+  // ✅ Animations (your original logic, unchanged)
+  useEffect(() => {
+    const animateElements = (selector: string, threshold: number) => {
+      const elements = document.querySelectorAll(selector);
+
+      elements.forEach((el) => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                el.classList.add("animate");
+                observer.unobserve(el);
+              }
+            });
+          },
+          { threshold }
         );
-      case "/pokoje":
+
+        observer.observe(el);
+      });
+    };
+
+    animateElements(".panel", 0.05);
+    animateElements(".box", 0.1);
+    animateElements(".panel-left", 0.1);
+    animateElements(".panel-right", 0.1);
+
+    window.scrollTo(0, 0);
+  }, [hash]); // 🔥 re-run animations on route change
+
+  // ✅ ROUTER FUNCTION
+  function reLinker(hash: string) {
+    switch (hash.toLowerCase()) {
+      case "#/hotel":
         return (
-          <>
+          <main className="default">
             <NavPanel blackColor={false}></NavPanel>
-            <RoomPage></RoomPage>
-          </>
+            <HomePage />
+          </main>
         );
-      case "/pokoje/szczegoly":
+
+      case "#/pokoje":
         return (
-          <>
-            <NavPanel blackColor={true}></NavPanel>
-            <RoomsAll></RoomsAll>
-          </>
+          <main className="default">
+            <NavPanel blackColor={false} />
+            <RoomPage />
+          </main>
         );
-      case "/restauracja":
+
+      case "#/pokoje/szczegoly":
         return (
-          <>
-            <NavPanel blackColor={true}></NavPanel>
-            <RestaurantPage></RestaurantPage>
-          </>
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <RoomsAll />
+          </main>
         );
-      case "/wesela":
+      case "#/pokoje/szczegoly#relaks":
         return (
-          <>
-            <NavPanel blackColor={true}></NavPanel>
-            <WeddingPage></WeddingPage>
-          </>
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <RoomsAll />
+          </main>
         );
-      case "/wydarzenia":
+
+      case "#/restauracja":
         return (
-          <>
-            <NavPanel blackColor={true}></NavPanel>
-            <EventPage></EventPage>
-          </>
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <RestaurantPage />
+          </main>
         );
+
+      case "#/restauracja#sale":
+        return (
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <RestaurantPage />
+          </main>
+        );
+
+      case "#/wesela":
+        return (
+          <main className="wedding">
+            <NavPanel blackColor={false} />
+            <WeddingPage />
+          </main>
+        );
+
+      case "#/wydarzenia":
+        return (
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <EventPage />
+          </main>
+        );
+
       default:
-        window.history.replaceState({}, "", "/hotel"); // no reload
+        // ✅ fallback (no reload!)
+        window.location.hash = "#/hotel";
+
         return (
-          <>
-            <NavPanel blackColor={true}></NavPanel>
-            <HomePage></HomePage>
-          </>
+          <main className="default">
+            <NavPanel blackColor={true} />
+            <HomePage />
+          </main>
         );
     }
   }
+
   return (
     <>
-      {/* <NavPanel blackColor={true}></NavPanel> */}
-      {reLinker(getPathname())}
-      {/* <MapsInfo></MapsInfo> */}
-      <Footer></Footer>
+      {reLinker(hash)}
+      <Contact></Contact>
+      <Footer />
     </>
   );
 }
